@@ -1,0 +1,74 @@
+## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+##---------- Keybindings for dwm ----------##
+
+
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+#alt + F1
+#	sh ~/.config/bspwm/rofi/bin/launcher
+
+# Rofi Menus/Applets
+#super + {x,r,s,i,a,u}
+#	sh ~/.config/bspwm/rofi/bin/{powermenu,asroot,screenshot,network,windows,spd}
+
+# Dmenu scripts
+super + x
+  sh ~/.config/scripts/dmenu_power.sh
+
+Print
+  sh ~/.config/scripts/dmenu_screenshot.sh
+
+##---------- Applications ----------##
+
+# Launch Apps
+super + {w,e,d}
+	{firefox,pcmanfm,discord}
+
+# Terminal Apps
+ctrl + alt + {t,n,h,r}
+	st -e {tuir,lvim,htop,ranger}
+
+XF86Calculator
+  st -e qalc
+
+# Lockscreen
+ctrl + alt + l
+   slock
+
+##---------- System Keys ----------##
+
+# Volume control
+#XF86Audio{RaiseVolume,LowerVolume}
+#	volume{ --inc, --dec}
+
+#XF86AudioMute
+#	volume --toggle
+
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+##---------- Bspwm ----------##
+
+
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+#super + control + {Left,Right,Up,Down}
+#	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+#super + alt + {Left,Right,Up,Down}
+#	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+
+##---------- EOF ----------##
