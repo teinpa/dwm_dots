@@ -1,0 +1,39 @@
+## aliases ##
+
+# pacman #
+alias lastins="awk '\$3 ~ /installed/' /var/log/pacman.log | tail --lines=20"
+alias lastuns="awk '\$3 ~ /removed/' /var/log/pacman.log | tail --lines=20"
+alias lastupg="awk '\$3 ~ /upgraded/' /var/log/pacman.log | tail --lines=20"
+alias updatep="sudo aura -Syu"
+alias updatea="sudo aura -Akuax"
+alias pacuns="sudo aura -Rns"
+alias pacss="aura -Ss"
+alias aurss="aura -As"
+alias leftover="aura -O"
+alias clean="sudo aura -Oj"
+
+# convinience #
+alias ls="exa --group-directories-first --icons -la"
+# alias ls="ptls -la"
+alias cp="ptcp"
+alias pwd="ptpwd"
+alias v="lvim"
+alias zshalias="v ~/.config/slimzsh/aliases.zsh.local"
+alias addtor="transmission-remote -a"
+alias smci="sudo make clean install"
+alias vkey="lvim ~/.config/sxhkd/sxhkdrc"
+alias wttr="curl -s wttr.in/Seoul?format=%c+%t | sed 's/+,%//g'"
+
+# flexipatches
+alias getst="git clone https://github.com/bakkeby/st-flexipatch.git"
+alias getdmenu="git clone https://github.com/bakkeby/dmenu-flexipatch.git"
+alias getdwm="git clone https://github.com/bakkeby/dwm-flexipatch.git"
+alias dwmdir="cd ~/.config/suckless/"
+alias makedwm="sudo rm config.h && sudo make clean install"
+alias statdir="lvim ~/.config/scripts/statusbar.sh"
+
+# git aliases
+alias gitcon='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+alias gitadd='gitcon add'
+alias gitcomm='gitcon commit -m'
+alias gitpush='gitcon push'
