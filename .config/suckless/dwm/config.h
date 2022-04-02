@@ -198,9 +198,9 @@ static const int lockfullscreen =
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"[]=", tile}, /* first entry is default */
-    {"[M]", monocle}, {"|M|", centeredmaster},
-    {"><>", NULL}, /* no layout function means floating behavior */
+    {" TILE", tile}, /* first entry is default */
+    {" MNCL", monocle}, {" CNTR", centeredmaster},
+    {" NULL", NULL}, /* no layout function means floating behavior */
     {NULL, NULL},
 };
 
@@ -231,10 +231,6 @@ static Key keys[] = {
     /* modifier                     key            function argument */
     {MODKEY | ShiftMask, XK_Return, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
-    /*{ MODKEY,                       XK_b,          togglebar,              {0}
-       }, { MODKEY,                       XK_j,          focusstack, {.i = +1 }
-       }, { MODKEY,                       XK_k,          focusstack, {.i = -1
-       } }, */
     {MODKEY, XK_Left, focusdir, {.i = 0}},  // left
     {MODKEY, XK_Right, focusdir, {.i = 1}}, // right
     {MODKEY, XK_Up, focusdir, {.i = 2}},    // up
@@ -242,17 +238,11 @@ static Key keys[] = {
     {MODKEY, XK_Tab, swapfocus, {.i = -1}},
     {MODKEY | ShiftMask, XK_Down, pushdown, {0}},
     {MODKEY | ShiftMask, XK_Up, pushup, {0}},
-    /*	{ MODKEY,                       XK_i,          incnmaster, {.i = +1 } },
-            { MODKEY,                       XK_d,          incnmaster, {.i =
-       -1 } }, */
     {MODKEY | ControlMask, XK_Left, setmfact, {.f = -0.05}},
     {MODKEY | ControlMask, XK_Right, setmfact, {.f = +0.05}},
     {MODKEY | ControlMask, XK_Up, setcfact, {.f = +0.25}},
     {MODKEY | ControlMask, XK_Down, setcfact, {.f = -0.25}},
     {MODKEY | ControlMask, XK_0, setcfact, {0}},
-    /*	{ MODKEY|ShiftMask,             XK_j,          movestack, {.i = +1 } },
-            { MODKEY|ShiftMask,             XK_k,          movestack, {.i = -1
-       } }, */
     {MODKEY, XK_g, zoom, {0}},
     {MODKEY, XK_v, view, {0}},
     {MODKEY | ShiftMask, XK_i, showhideclient, {0}},
@@ -265,9 +255,6 @@ static Key keys[] = {
     {MODKEY, XK_n, setlayout, {.v = &layouts[3]}},
     {MODKEY, XK_space, togglefloating, {0}},
     {MODKEY | ShiftMask, XK_f, togglefullscreen, {0}},
-    /*	{ MODKEY,                       XK_0,          view, {.ui = ~0 } }, {
-       MODKEY|ShiftMask,             XK_0,          tag,                    {.ui
-       = ~0 } }, */
     {MODKEY, XK_comma, cyclelayout, {.i = -1}},
     {MODKEY, XK_period, cyclelayout, {.i = +1}},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
