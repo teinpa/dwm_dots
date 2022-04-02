@@ -10,14 +10,14 @@ static const unsigned int gappiv = 10; /* vert inner gap between windows */
 static const unsigned int gappoh =
     10; /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov =
-    20; /* vert outer gap between windows and screen edge */
+    10; /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact =
-    3; /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer
+    1; /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer
           gaps */
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
-static const int vertpad = 5; /* vertical padding of bar */
-static const int sidepad = 5; /* horizontal padding of bar */
+static const int vertpad = 0; /* vertical padding of bar */
+static const int sidepad = 0; /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index),
  * 'A' (active monitor) */
 static const int statusmon = 'A';
@@ -30,7 +30,7 @@ static int tiledindicatortype = INDICATOR_NONE;
 static int floatindicatortype = INDICATOR_NONE;
 static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=11",
                               "D2Coding:size=10", "JoyPixels:size=10"};
-static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=10";
+static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=11";
 
 static char c000000[] = "#000000"; // placeholder value
 
@@ -222,8 +222,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-    "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
-    "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", NULL};
+    "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb",
+    "#1e1e2e",   "-nf", "#d9e0ee", "-sb", "#c9cbff", "-sf",
+    "#1E1E2E",   "-Y",  "2",       "-p",  "RUN:",    NULL};
 static const char *termcmd[] = {"st", NULL};
 
 static Key keys[] = {
