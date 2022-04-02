@@ -28,7 +28,7 @@ alias wttr="curl -s wttr.in/Seoul?format=%c+%t | sed 's/+,%//g'"
 # flexipatches
 alias getst="git clone https://github.com/bakkeby/st-flexipatch.git"
 alias getdmenu="git clone https://github.com/bakkeby/dmenu-flexipatch.git"
-alias getdwm="git clone https://github.com/bakkeby/dwm-flexipatch.git"
+alias getdwm="git clone --depth=1 https://github.com/bakkeby/dwm-flexipatch.git"
 alias dwmdir="cd ~/.config/suckless/"
 alias makedwm="sudo rm config.h && sudo make clean install"
 alias statdir="lvim ~/.config/scripts/statusbar.sh"
