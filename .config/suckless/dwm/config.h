@@ -5,17 +5,19 @@ static const unsigned int borderpx = 5; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int swallowfloating =
     0; /* 1 means swallow floating windows by default */
-static const unsigned int gappih = 5; /* horiz inner gap between windows */
-static const unsigned int gappiv = 5; /* vert inner gap between windows */
+static const unsigned int gappih = 10; /* horiz inner gap between windows */
+static const unsigned int gappiv = 10; /* vert inner gap between windows */
 static const unsigned int gappoh =
-    5; /* horiz outer gap between windows and screen edge */
+    10; /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov =
-    10; /* vert outer gap between windows and screen edge */
+    20; /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact =
-    5; /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer
+    3; /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer
           gaps */
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
+static const int vertpad = 5; /* vertical padding of bar */
+static const int sidepad = 5; /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index),
  * 'A' (active monitor) */
 static const int statusmon = 'A';
@@ -28,7 +30,7 @@ static int tiledindicatortype = INDICATOR_NONE;
 static int floatindicatortype = INDICATOR_NONE;
 static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=11",
                               "D2Coding:size=10", "JoyPixels:size=10"};
-static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=11";
+static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=10";
 
 static char c000000[] = "#000000"; // placeholder value
 
@@ -157,8 +159,8 @@ static const Rule rules[] = {
         RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
             RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
                 RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-                    RULE(.class = "st", .isterminal = 1)
-                        RULE(.class = "Discord", .tags = 1 << 5)};
+                    RULE(.class = "Discord", .tags = 1 << 5)
+                        RULE(.class = "st", .isterminal = 1)};
 
 /* Bar rules allow you to configure what is shown where on the bar, as well as
  * introducing your own bar modules.
@@ -197,9 +199,9 @@ static const int lockfullscreen =
 static const Layout layouts[] = {
     /* symbol     arrange function */
     {"[]=", tile}, /* first entry is default */
-    {"[M]", monocle},
-    {"|M|", centeredmaster},
-    {"<><", NULL}, /* no layout function means floating behavior */
+    {"[M]", monocle}, {"|M|", centeredmaster},
+    {"><>", NULL}, /* no layout function means floating behavior */
+    {NULL, NULL},
 };
 
 /* key definitions */
@@ -220,29 +222,39 @@ static const Layout layouts[] = {
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-    "dmenu_run", "-Y",  "7",       "-X",  "15",      "-W",  "2530",    "-p",
-    "Run:",      "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
-    "#d9e0ee",   "-sb", "#c9cdff", "-sf", "#1e1e2e", NULL};
+    "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
+    "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", NULL};
 static const char *termcmd[] = {"st", NULL};
 
 static Key keys[] = {
     /* modifier                     key            function argument */
     {MODKEY | ShiftMask, XK_Return, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
+    /*{ MODKEY,                       XK_b,          togglebar,              {0}
+       }, { MODKEY,                       XK_j,          focusstack, {.i = +1 }
+       }, { MODKEY,                       XK_k,          focusstack, {.i = -1
+       } }, */
     {MODKEY, XK_Left, focusdir, {.i = 0}},  // left
     {MODKEY, XK_Right, focusdir, {.i = 1}}, // right
     {MODKEY, XK_Up, focusdir, {.i = 2}},    // up
     {MODKEY, XK_Down, focusdir, {.i = 3}},  // down
+    {MODKEY, XK_Tab, swapfocus, {.i = -1}},
     {MODKEY | ShiftMask, XK_Down, pushdown, {0}},
     {MODKEY | ShiftMask, XK_Up, pushup, {0}},
+    /*	{ MODKEY,                       XK_i,          incnmaster, {.i = +1 } },
+            { MODKEY,                       XK_d,          incnmaster, {.i =
+       -1 } }, */
     {MODKEY | ControlMask, XK_Left, setmfact, {.f = -0.05}},
     {MODKEY | ControlMask, XK_Right, setmfact, {.f = +0.05}},
     {MODKEY | ControlMask, XK_Up, setcfact, {.f = +0.25}},
     {MODKEY | ControlMask, XK_Down, setcfact, {.f = -0.25}},
-    {MODKEY | ControlMask, XK_period, setcfact, {0}},
-    {MODKEY, XK_Tab, view, {0}},
-    {MODKEY | ShiftMask, XK_i, showhideclient, {0}},
+    {MODKEY | ControlMask, XK_0, setcfact, {0}},
+    /*	{ MODKEY|ShiftMask,             XK_j,          movestack, {.i = +1 } },
+            { MODKEY|ShiftMask,             XK_k,          movestack, {.i = -1
+       } }, */
     {MODKEY, XK_g, zoom, {0}},
+    {MODKEY, XK_v, view, {0}},
+    {MODKEY | ShiftMask, XK_i, showhideclient, {0}},
     {MODKEY, XK_q, killclient, {0}},
     {MODKEY | ShiftMask, XK_q, quit, {0}},
     {MODKEY | ControlMask | ShiftMask, XK_q, quit, {1}},
@@ -250,10 +262,13 @@ static Key keys[] = {
     {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
     {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
     {MODKEY, XK_n, setlayout, {.v = &layouts[3]}},
-    {MODKEY, XK_period, setlayout, {0}},
     {MODKEY, XK_space, togglefloating, {0}},
     {MODKEY | ShiftMask, XK_f, togglefullscreen, {0}},
-    /* {MODKEY, XK_0, view, {.ui = ~0}}, */
+    /*	{ MODKEY,                       XK_0,          view, {.ui = ~0 } }, {
+       MODKEY|ShiftMask,             XK_0,          tag,                    {.ui
+       = ~0 } }, */
+    {MODKEY, XK_comma, cyclelayout, {.i = -1}},
+    {MODKEY, XK_period, cyclelayout, {.i = +1}},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4)};
 

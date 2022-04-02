@@ -387,7 +387,7 @@ static void (*handler[LASTEvent])(XEvent *) = {
     [ConfigureRequest] = configurerequest,
     [ConfigureNotify] = configurenotify,
     [DestroyNotify] = destroynotify,
-    // [EnterNotify] = enternotify,
+    /*	[EnterNotify] = enternotify, */
     [Expose] = expose,
     [FocusIn] = focusin,
     [KeyPress] = keypress,
@@ -1359,6 +1359,7 @@ void killclient(const Arg *arg) {
     XSetErrorHandler(xerror);
     XUngrabServer(dpy);
   }
+  selmon->pertag->prevclient[selmon->pertag->curtag] = NULL;
 }
 
 void manage(Window w, XWindowAttributes *wa) {
@@ -1415,6 +1416,9 @@ void manage(Window w, XWindowAttributes *wa) {
   if (getatomprop(c, netatom[NetWMState]) == netatom[NetWMFullscreen])
     setfullscreen(c, 1);
   updatewmhints(c);
+
+  c->x = c->mon->wx + (c->mon->ww - WIDTH(c)) / 2;
+  c->y = c->mon->wy + (c->mon->wh - HEIGHT(c)) / 2;
 
   XSelectInput(dpy, w,
                EnterWindowMask | FocusChangeMask | PropertyChangeMask |
@@ -2045,10 +2049,16 @@ void spawn(const Arg *arg) {
 }
 
 void tag(const Arg *arg) {
+  unsigned int tagmask, tagindex;
 
   if (selmon->sel && arg->ui & TAGMASK) {
     selmon->sel->tags = arg->ui & TAGMASK;
     focus(NULL);
+    selmon->pertag->prevclient[selmon->pertag->curtag] = NULL;
+    for (tagmask = arg->ui & TAGMASK, tagindex = 1; tagmask != 0;
+         tagmask >>= 1, tagindex++)
+      if (tagmask & 1)
+        selmon->pertag->prevclient[tagindex] = NULL;
     arrange(selmon);
   }
 }
@@ -2091,6 +2101,7 @@ void togglefloating(const Arg *arg) {
 
 void toggletag(const Arg *arg) {
   unsigned int newtags;
+  unsigned int tagmask, tagindex;
 
   if (!selmon->sel)
     return;
@@ -2098,6 +2109,10 @@ void toggletag(const Arg *arg) {
   if (newtags) {
     selmon->sel->tags = newtags;
     focus(NULL);
+    for (tagmask = arg->ui & TAGMASK, tagindex = 1; tagmask != 0;
+         tagmask >>= 1, tagindex++)
+      if (tagmask & 1)
+        selmon->pertag->prevclient[tagindex] = NULL;
     arrange(selmon);
   }
 }
@@ -2139,6 +2154,7 @@ void toggleview(const Arg *arg) {
 void unfocus(Client *c, int setfocus, Client *nextfocus) {
   if (!c)
     return;
+  selmon->pertag->prevclient[selmon->pertag->curtag] = c;
   if (c->isfullscreen && ISVISIBLE(c) && c->mon == selmon && nextfocus &&
       !nextfocus->isfloating)
     setfullscreen(c, 0);
@@ -2245,10 +2261,8 @@ void updatebarpos(Monitor *m) {
   Bar *bar;
   int y_pad = 0;
   int x_pad = 0;
-  if (enablegaps) {
-    y_pad = gappoh;
-    x_pad = gappov;
-  }
+  y_pad = vertpad;
+  x_pad = sidepad;
 
   for (bar = m->bar; bar; bar = bar->next) {
     bar->bx = m->wx + x_pad;
@@ -2531,6 +2545,9 @@ void zoom(const Arg *arg) {
     return;
   Client *at = NULL, *cold, *cprevious = NULL, *p;
 
+  c->mon->pertag->prevclient[c->mon->pertag->curtag] =
+      nexttiled(c->mon->clients);
+
   if (!c->mon->lt[c->mon->sellt]->arrange || (c && c->isfloating) || !c)
     return;
 
@@ -2541,10 +2558,11 @@ void zoom(const Arg *arg) {
       cprevious = nexttiled(at->next);
     if (!cprevious || cprevious != p) {
       c->mon->pertag->prevzooms[c->mon->pertag->curtag] = NULL;
-      if (!c || !(c = nexttiled(c->next)))
+      if (!c || !(c = c->mon->pertag->prevclient[c->mon->pertag->curtag] =
+                      nexttiled(c->next)))
         return;
     } else
-      c = cprevious;
+      c = c->mon->pertag->prevclient[c->mon->pertag->curtag] = cprevious;
   }
 
   cold = nexttiled(c->mon->clients);
