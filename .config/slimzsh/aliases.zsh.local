@@ -4,9 +4,9 @@
 alias lastins="awk '\$3 ~ /installed/' /var/log/pacman.log | tail --lines=20"
 alias lastuns="awk '\$3 ~ /removed/' /var/log/pacman.log | tail --lines=20"
 alias lastupg="awk '\$3 ~ /upgraded/' /var/log/pacman.log | tail --lines=20"
-alias update="sudo yay"
+# alias update="sudo yay"
 # alias updatea="sudo aura -Akuax"
-alias clean="sudo yay -Yc"
+alias clean="yay -Yc"
 
 # convinience #
 alias ls="exa --group-directories-first --icons -la"
