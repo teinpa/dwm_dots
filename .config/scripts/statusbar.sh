@@ -82,7 +82,7 @@ weather() {
 
 clock() {
   printf "^b$red^^c$black^ $(date '+%a' | sed 's/.*/\U&/') ^d^ "
-	printf " ^c$red^$(date '+%I:%M%p')^d^"
+	printf " ^c$red^$(date '+%I:%M%p') ^d^"
 }
 
 while true; do
