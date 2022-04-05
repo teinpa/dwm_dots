@@ -17,7 +17,7 @@ static const int smartgaps_fact =
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
 static const int vertpad = 0; /* vertical padding of bar */
-static const int sidepad = 0; /* horizontal padding of bar */
+static const int sidepad = 3; /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index),
  * 'A' (active monitor) */
 static const int statusmon = 'A';
@@ -34,8 +34,8 @@ static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=11";
 
 static char c000000[] = "#000000"; // placeholder value
 
-static char normfgcolor[] = "#ddb6f2";     // layout and statusbar char colors
-static char normbgcolor[] = "#1E1E2E";     //
+static char normfgcolor[] = "#d9e0ee";     // layout and statusbar char colors
+static char normbgcolor[] = "#1e1e2e";     //
 static char normbordercolor[] = "#1e1e2e"; // inactive border color
 static char normfloatcolor[] = "#1E1E2E";
 
@@ -69,8 +69,8 @@ static char hidselfgcolor[] = "#ddb6f2";
 static char hidnormbgcolor[] = "#161320";
 static char hidselbgcolor[] = "#161320";
 
-static char urgfgcolor[] = "#d9e0ee";
-static char urgbgcolor[] = "#161320";
+static char urgfgcolor[] = "#1e1e2e";
+static char urgbgcolor[] = "#f8bd96";
 static char urgbordercolor[] = "#f28fad";
 static char urgfloatcolor[] = "#f28fad";
 
@@ -159,7 +159,7 @@ static const Rule rules[] = {
         RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
             RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
                 RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-                    RULE(.class = "Discord", .tags = 1 << 5)
+                    RULE(.class = "discord", .tags = 1 << 4)
                         RULE(.class = "st", .isterminal = 1)};
 
 /* Bar rules allow you to configure what is shown where on the bar, as well as
@@ -198,9 +198,9 @@ static const int lockfullscreen =
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"  TILE", tile}, /* first entry is default */
-    {"  MNCL", monocle}, {"  CTMR", centeredmaster},
-    {"  NULL", NULL}, /* no layout function means floating behavior */
+    {" TILE", tile}, /* first entry is default */
+    {" MNCL", monocle}, {" CTMR", centeredmaster},
+    {" NULL", NULL}, /* no layout function means floating behavior */
     {NULL, NULL},
 };
 
