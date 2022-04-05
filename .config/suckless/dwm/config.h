@@ -198,9 +198,9 @@ static const int lockfullscreen =
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {" TILE", tile}, /* first entry is default */
-    {" MNCL", monocle}, {" CTMR", centeredmaster},
-    {" NULL", NULL}, /* no layout function means floating behavior */
+    {"  []=", tile}, /* first entry is default */
+    {"  [M]", monocle}, {"  |M|", centeredmaster},
+    {"  ><>", NULL}, /* no layout function means floating behavior */
     {NULL, NULL},
 };
 
