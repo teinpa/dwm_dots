@@ -15,13 +15,35 @@ interval=0
 # 	printf "^c$white^ ^b$grey^ $cpu_val"
 # }
 
+spotify() {
+    if ps -C ncspot > /dev/null; then
+        PLAYER="ncspot"
+    fi
+    
+    if [ "$PLAYER" = "ncspot" ]; then
+        ARTIST=$(playerctl metadata xesam:albumArtist)
+        TRACK=$(playerctl metadata title | sed 's/(.*//')
+        STATUS=$(playerctl status)
+        SEP1=" | "
+        if [ "$STATUS" = "Playing" ]; then
+            # STATUS="PLA"
+            printf "^b$rosewater^^c$black^ SPT ^b$black^^c$rosewater^  $ARTIST - $TRACK"
+        # else
+            # STATUS="PAU"
+            # printf "^b$rosewater^^c$black^ PAU ^b$black^^c$rosewater^ $ARTIST - $TRACK "
+            # printf null
+        fi
+    fi
+    # printf "^b$rosewater^^c$black^ $STATUS ^b$black^^c$rosewater^ $ARTIST - $TRACK "
+}
+
 pkg_updates() {
 	updates=$(checkupdates | wc -l)   # arch , needs pacman contrib
 
 	# if [[ -z "$updates" ]]; then
 	# 	printf "^c$black^^b$yellow^ PKG ^d^ Fully Updated "
 	# else
-	printf "^b$yellow^^c$black^ PKG ^d^  ^c$yellow^$updates^d^ "
+	printf "^b$yellow^^c$black^ PKG ^b$black^^c$yellow^  $updates "
 	# fi
 }
 
@@ -41,9 +63,9 @@ get_volume(){
 
         if [ "${curStatus}" = 'Mute: yes' ]
         then
-            printf "^b$red^^c$black^ VOL ^d^  ^c$red^MUTED^d^ "
+            printf "^b$red^^c$black^ VOL ^b$black^^c$red^  MUTED "
         else
-            printf "^b$green^^c$black^ VOL ^d^  ^c$green^$volume%%^d^ "
+            printf "^b$green^^c$black^ VOL ^b$black^^c$green^  $volume%% "
         fi
 }
 
@@ -60,7 +82,7 @@ get_volume(){
 mem() {
   memory=$(free -h | awk '/^Mem/ { print $3 }')
   
-  printf "^c$black^^b$blue^ MEM ^d^ ^c$blue^ $memory^d^ "
+  printf "^b$black^ ^c$black^^b$blue^ MEM ^b$black^^c$blue^  $memory "
  	  # printf "^c$red^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
@@ -81,8 +103,8 @@ weather() {
 # }
 
 clock() {
-  printf "^b$red^^c$black^ $(date '+%a' | sed 's/.*/\U&/') ^d^ "
-	printf " ^c$red^$(date '+%I:%M%p') ^d^"
+  printf "^b$red^^c$black^ $(date '+%a' | sed 's/.*/\U&/') "
+	printf "^b$black^^c$red^  $(date '+%I:%M%p')"
 }
 
 while true; do
@@ -90,6 +112,6 @@ while true; do
 	[ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
 	interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(mem) $(pkg_updates) $(get_volume) $(clock)"
+  sleep 1 && xsetroot -name "$(spotify) $(mem) $(pkg_updates) $(get_volume) $(clock)"
 done
 
