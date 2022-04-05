@@ -28,8 +28,8 @@ super + {w,e,d}
 	{firefox,pcmanfm,discord}
 
 # Terminal Apps
-ctrl + alt + {t,n,h,r}
-	st -e {tuir,lvim,htop,ranger}
+ctrl + alt + {t,n,h,r,s}
+	st -e {tuir,lvim,htop,ranger,ncspot}
 
 XF86Calculator
   st -e qalc
