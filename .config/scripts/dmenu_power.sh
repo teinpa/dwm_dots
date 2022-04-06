@@ -1,6 +1,6 @@
 #!/bin/sh
 
-RET=$(echo -e "shutdown\nreboot\nlogout\nlock\ncancel" | dmenu -nb "#1e1e2e" -nf "#D9E0EE" -sb "#f28fad" -sf "#1e1e2e" -Y 2 -p "POWER:")
+RET=$(echo -e "shutdown\nreboot\nlogout\nlock\ncancel" | dmenu -nb "#1e1e2e" -nf "#D9E0EE" -sb "#f28fad" -sf "#1e1e2e" -Y 5 -X 5 -W 1800 -p "POWER:")
 
 case $RET in
 	shutdown) poweroff ;;
