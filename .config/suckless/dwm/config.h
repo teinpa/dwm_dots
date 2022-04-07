@@ -25,7 +25,7 @@ static const unsigned int systrayspacing = 0; /* systray spacing */
 static const int showsystray = 1;             /* 0 means no systray */
 
 /* Indicators: see patch/bar_indicators.h for options */
-static int tagindicatortype = INDICATOR_TOP_BAR;
+static int tagindicatortype = INDICATOR_BOTTOM_BAR;
 static int tiledindicatortype = INDICATOR_NONE;
 static int floatindicatortype = INDICATOR_NONE;
 static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=11",
@@ -34,7 +34,7 @@ static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=11";
 
 static char c000000[] = "#000000"; // placeholder value
 
-static char normfgcolor[] = "#d9e0ee";     // layout and statusbar char colors
+static char normfgcolor[] = "#f8bd96";     // layout and statusbar char colors
 static char normbgcolor[] = "#1e1e2e";     //
 static char normbordercolor[] = "#1e1e2e"; // inactive border color
 static char normfloatcolor[] = "#1E1E2E";
@@ -49,13 +49,13 @@ static char titlenormbgcolor[] = "#1E1E2E";
 static char titlenormbordercolor[] = "#1E1E2E";
 static char titlenormfloatcolor[] = "#c9cbff";
 
-static char titleselfgcolor[] = "#ddb6f2";
+static char titleselfgcolor[] = "#c3bac6";
 static char titleselbgcolor[] = "#1E1E2E";
 static char titleselbordercolor[] = "#1E1E2E";
 static char titleselfloatcolor[] = "#ddb6f2";
 
-static char tagsnormfgcolor[] = "#1e1e2e";
-static char tagsnormbgcolor[] = "#ddb6f2";
+static char tagsnormfgcolor[] = "#6e6c7e";
+static char tagsnormbgcolor[] = "#1e1e2e";
 static char tagsnormbordercolor[] = "#1e1e2e";
 static char tagsnormfloatcolor[] = "#c9cbff";
 
@@ -69,8 +69,8 @@ static char hidselfgcolor[] = "#ddb6f2";
 static char hidnormbgcolor[] = "#161320";
 static char hidselbgcolor[] = "#161320";
 
-static char urgfgcolor[] = "#1e1e2e";
-static char urgbgcolor[] = "#f8bd96";
+static char urgfgcolor[] = "#f8bd96";
+static char urgbgcolor[] = "#1e1e2e";
 static char urgbordercolor[] = "#f28fad";
 static char urgfloatcolor[] = "#f28fad";
 
@@ -198,9 +198,9 @@ static const int lockfullscreen =
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"[]=", tile}, /* first entry is default */
-    {"[M]", monocle}, {"|M|", centeredmaster},
-    {"><>", NULL}, /* no layout function means floating behavior */
+    {" []=", tile}, /* first entry is default */
+    {" [M]", monocle}, {" |M|", centeredmaster},
+    {" ><>", NULL}, /* no layout function means floating behavior */
     {NULL, NULL},
 };
 
@@ -223,8 +223,8 @@ static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
-    "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", "-Y",  "5",       "-X",
-    "5",         "-W",  "1800",    "-p",  "RUN:",    NULL};
+    "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
+    "5",         "-W",  "2540",    "-p",  "RUN:",    NULL};
 static const char *termcmd[] = {"st", NULL};
 
 static Key keys[] = {
