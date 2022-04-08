@@ -1,7 +1,7 @@
 slim_path=`dirname $0`
 fpath=( $slim_path $fpath )
 
-export PATH=~/.local/bin:$PATH
+# export PATH=~/.local/bin:$PATH
 
 autoload -U promptinit && promptinit
 prompt pure

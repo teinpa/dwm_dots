@@ -10,9 +10,6 @@ alias clean="yay -Yc"
 
 # convinience #
 alias ls="exa --group-directories-first --icons -la"
-# alias ls="ptls -la"
-alias cp="ptcp"
-alias pwd="ptpwd"
 alias v="lvim"
 alias z="zathura"
 alias zshalias="v ~/.config/slimzsh/aliases.zsh.local"
