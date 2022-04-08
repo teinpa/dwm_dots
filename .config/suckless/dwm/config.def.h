@@ -1,12 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 5; /* border pixel of windows */
+static const unsigned int borderpx = 3; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int swallowfloating =
     0; /* 1 means swallow floating windows by default */
-static const unsigned int gappih = 20; /* horiz inner gap between windows */
-static const unsigned int gappiv = 20; /* vert inner gap between windows */
+static const unsigned int gappih = 15; /* horiz inner gap between windows */
+static const unsigned int gappiv = 15; /* vert inner gap between windows */
 static const unsigned int gappoh =
     15; /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov =
@@ -16,8 +16,8 @@ static const int smartgaps_fact =
           gaps */
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
-static const int vertpad = 5; /* vertical padding of bar */
-static const int sidepad = 5; /* horizontal padding of bar */
+static const int vertpad = 0; /* vertical padding of bar */
+static const int sidepad = 0; /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index),
  * 'A' (active monitor) */
 static const int statusmon = 'A';
@@ -25,7 +25,7 @@ static const unsigned int systrayspacing = 0; /* systray spacing */
 static const int showsystray = 1;             /* 0 means no systray */
 
 /* Indicators: see patch/bar_indicators.h for options */
-static int tagindicatortype = INDICATOR_BOTTOM_BAR;
+static int tagindicatortype = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype = INDICATOR_NONE;
 static int floatindicatortype = INDICATOR_NONE;
 static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=11",
@@ -34,7 +34,7 @@ static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=11";
 
 static char c000000[] = "#000000"; // placeholder value
 
-static char normfgcolor[] = "#f8bd96";     // layout and statusbar char colors
+static char normfgcolor[] = "#d9e0ee";     // layout and statusbar char colors
 static char normbgcolor[] = "#1e1e2e";     //
 static char normbordercolor[] = "#1e1e2e"; // inactive border color
 static char normfloatcolor[] = "#1E1E2E";
@@ -49,7 +49,7 @@ static char titlenormbgcolor[] = "#1E1E2E";
 static char titlenormbordercolor[] = "#1E1E2E";
 static char titlenormfloatcolor[] = "#c9cbff";
 
-static char titleselfgcolor[] = "#c3bac6";
+static char titleselfgcolor[] = "#988ba2";
 static char titleselbgcolor[] = "#1E1E2E";
 static char titleselbordercolor[] = "#1E1E2E";
 static char titleselfloatcolor[] = "#ddb6f2";
@@ -59,7 +59,7 @@ static char tagsnormbgcolor[] = "#1e1e2e";
 static char tagsnormbordercolor[] = "#1e1e2e";
 static char tagsnormfloatcolor[] = "#c9cbff";
 
-static char tagsselfgcolor[] = "#ddb6f2";
+static char tagsselfgcolor[] = "#abe9b3";
 static char tagsselbgcolor[] = "#1e1e2e";
 static char tagsselbordercolor[] = "#1e1e2e";
 static char tagsselfloatcolor[] = "#ddb6f2";
@@ -69,7 +69,7 @@ static char hidselfgcolor[] = "#ddb6f2";
 static char hidnormbgcolor[] = "#161320";
 static char hidselbgcolor[] = "#161320";
 
-static char urgfgcolor[] = "#f8bd96";
+static char urgfgcolor[] = "#f28fad";
 static char urgbgcolor[] = "#1e1e2e";
 static char urgbordercolor[] = "#f28fad";
 static char urgfloatcolor[] = "#f28fad";
@@ -180,7 +180,7 @@ static const BarRule barrules[] = {
     {-1, 0, BAR_ALIGN_LEFT, width_tags, draw_tags, click_tags, "tags"},
     {0, 0, BAR_ALIGN_RIGHT, width_systray, draw_systray, click_systray,
      "systray"},
-    {-1, 0, BAR_ALIGN_LEFT, width_ltsymbol, draw_ltsymbol, click_ltsymbol,
+    {-1, 0, BAR_ALIGN_NONE, width_ltsymbol, draw_ltsymbol, click_ltsymbol,
      "layout"},
     {statusmon, 0, BAR_ALIGN_RIGHT, width_status2d, draw_status2d,
      click_status2d, "status2d"},
@@ -198,9 +198,9 @@ static const int lockfullscreen =
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {" []=", tile}, /* first entry is default */
-    {" [M]", monocle}, {" |M|", centeredmaster},
-    {" ><>", NULL}, /* no layout function means floating behavior */
+    {"侀", tile}, /* first entry is default */
+    {"恵", monocle}, {"頻", centeredmaster},
+    {"充", NULL}, /* no layout function means floating behavior */
     {NULL, NULL},
 };
 
@@ -223,8 +223,7 @@ static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
-    "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
-    "5",         "-W",  "2540",    "-p",  "RUN:",    NULL};
+    "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", "-p",  "RUN:",    NULL};
 static const char *termcmd[] = {"st", NULL};
 
 static Key keys[] = {
