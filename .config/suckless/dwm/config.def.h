@@ -25,7 +25,7 @@ static const unsigned int systrayspacing = 0; /* systray spacing */
 static const int showsystray = 1;             /* 0 means no systray */
 
 /* Indicators: see patch/bar_indicators.h for options */
-static int tagindicatortype = INDICATOR_TOP_LEFT_SQUARE;
+static int tagindicatortype = INDICATOR_BOTTOM_BAR;
 static int tiledindicatortype = INDICATOR_NONE;
 static int floatindicatortype = INDICATOR_NONE;
 static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=11",
@@ -34,32 +34,32 @@ static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=11";
 
 static char c000000[] = "#000000"; // placeholder value
 
-static char normfgcolor[] = "#d9e0ee";     // layout and statusbar char colors
+static char normfgcolor[] = "#c9cbff";     // layout and statusbar char colors
 static char normbgcolor[] = "#1e1e2e";     //
 static char normbordercolor[] = "#1e1e2e"; // inactive border color
 static char normfloatcolor[] = "#1E1E2E";
 
 static char selfgcolor[] = "#c9cbff";
 static char selbgcolor[] = "#1E1E2E";
-static char selbordercolor[] = "#575268";
-static char selfloatcolor[] = "#f2cdcd";
+static char selbordercolor[] = "#c9cbff";
+static char selfloatcolor[] = "#f5e0dc";
 
-static char titlenormfgcolor[] = "#d9e0ee";
+static char titlenormfgcolor[] = "#c9cbff";
 static char titlenormbgcolor[] = "#1E1E2E";
 static char titlenormbordercolor[] = "#1E1E2E";
 static char titlenormfloatcolor[] = "#c9cbff";
 
-static char titleselfgcolor[] = "#988ba2";
+static char titleselfgcolor[] = "#c9cbff";
 static char titleselbgcolor[] = "#1E1E2E";
 static char titleselbordercolor[] = "#1E1E2E";
 static char titleselfloatcolor[] = "#ddb6f2";
 
-static char tagsnormfgcolor[] = "#6e6c7e";
+static char tagsnormfgcolor[] = "#575268";
 static char tagsnormbgcolor[] = "#1e1e2e";
 static char tagsnormbordercolor[] = "#1e1e2e";
 static char tagsnormfloatcolor[] = "#c9cbff";
 
-static char tagsselfgcolor[] = "#abe9b3";
+static char tagsselfgcolor[] = "#f5e0dc";
 static char tagsselbgcolor[] = "#1e1e2e";
 static char tagsselbordercolor[] = "#1e1e2e";
 static char tagsselfloatcolor[] = "#ddb6f2";
@@ -177,14 +177,14 @@ static const Rule rules[] = {
 static const BarRule barrules[] = {
     /* monitor   bar    alignment         widthfunc                drawfunc
        clickfunc                name */
+    {-1, 0, BAR_ALIGN_NONE, width_ltsymbol, draw_ltsymbol, click_ltsymbol,
+     "layout"},
     {-1, 0, BAR_ALIGN_LEFT, width_tags, draw_tags, click_tags, "tags"},
     {0, 0, BAR_ALIGN_RIGHT, width_systray, draw_systray, click_systray,
      "systray"},
-    {-1, 0, BAR_ALIGN_NONE, width_ltsymbol, draw_ltsymbol, click_ltsymbol,
-     "layout"},
     {statusmon, 0, BAR_ALIGN_RIGHT, width_status2d, draw_status2d,
      click_status2d, "status2d"},
-    {-1, 0, BAR_ALIGN_NONE, width_wintitle, draw_wintitle, click_wintitle,
+    {-1, 0, BAR_ALIGN_LEFT, width_wintitle, draw_wintitle, click_wintitle,
      "wintitle"},
 };
 
