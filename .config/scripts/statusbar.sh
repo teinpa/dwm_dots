@@ -22,12 +22,13 @@ spotify() {
     
     if [ "$PLAYER" = "ncspot" ]; then
         ARTIST=$(playerctl metadata xesam:albumArtist)
-        TRACK=$(playerctl metadata title | sed 's/(.*//')
+        # TRACK=$(playerctl metadata title | sed 's/(.*//')
+        TRACK=$(playerctl metadata title)
         STATUS=$(playerctl status)
         SEP1=" | "
         if [ "$STATUS" = "Playing" ]; then
             # STATUS="PLA"
-            printf "^c$rosewater^  ^c$grey3^ $ARTIST - $TRACK "
+            printf "^c$rosewater^  ^c$grey2^ $ARTIST - $TRACK"
         # else
             # STATUS="PAU"
             # printf "^b$rosewater^^c$black^ PAU ^b$black^^c$rosewater^ $ARTIST - $TRACK "
@@ -43,7 +44,7 @@ pkg_updates() {
 	# if [[ -z "$updates" ]]; then
 	# 	printf "^c$black^^b$yellow^ PKG ^d^ Fully Updated "
 	# else
-	printf "^c$yellow^ ^c$grey3^ $updates "
+	printf "^c$yellow^ ^c$grey2^ $updates "
 	# fi
 }
 
@@ -63,9 +64,9 @@ get_volume(){
 
         if [ "${curStatus}" = 'Mute: yes' ]
         then
-            printf "^c$red^^c$grey3^ MUTED "
+            printf "^c$red^^c$grey2^ MUTED "
         else
-            printf "^c$green^ ^c$grey3^ $volume%% "
+            printf "^c$green^ ^c$grey2^ $volume%% "
         fi
 }
 
@@ -82,7 +83,7 @@ get_volume(){
 mem() {
   memory=$(free -h | awk '/^Mem/ { print $3 }')
   
-  printf "^c$blue^ ^c$grey3^ $memory "
+  printf "^c$blue^ ^c$grey2^ $memory "
  	  # printf "^c$red^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
@@ -104,7 +105,7 @@ weather() {
 
 clock() {
   printf "^c$red^ "
-	printf "^c$grey3^ $(date '+%I:%M%p | %a' | sed 's/.*/\U&/')"
+	printf "^c$grey2^ $(date '+%I:%M %a' | sed 's/.*/\U&/')"
 }
 
 while true; do
