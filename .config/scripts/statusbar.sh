@@ -28,14 +28,14 @@ spotify() {
         SEP1=" | "
         if [ "$STATUS" = "Playing" ]; then
             # STATUS="PLA"
-            printf "^c$lavender^  ^c$rosewater^ $ARTIST - $TRACK"
+            printf "^c$lavender^ SPT ^c$red^$ARTIST - $TRACK"
         # else
             # STATUS="PAU"
-            # printf "^b$rosewater^^c$black^ PAU ^b$black^^c$rosewater^ $ARTIST - $TRACK "
+            # printf "^b$red^^c$black^ PAU ^b$black^^c$red^ $ARTIST - $TRACK "
             # printf null
         fi
     fi
-    # printf "^b$rosewater^^c$black^ $STATUS ^b$black^^c$rosewater^ $ARTIST - $TRACK "
+    # printf "^b$red^^c$black^ $STATUS ^b$black^^c$red^ $ARTIST - $TRACK "
 }
 
 pkg_updates() {
@@ -44,7 +44,7 @@ pkg_updates() {
 	# if [[ -z "$updates" ]]; then
 	# 	printf "^c$black^^b$yellow^ PKG ^d^ Fully Updated "
 	# else
-	printf "^c$lavender^ ^c$rosewater^ $updates "
+	printf "^c$lavender^ PKG ^c$red^$updates"
 	# fi
 }
 
@@ -64,9 +64,9 @@ get_volume(){
 
         if [ "${curStatus}" = 'Mute: yes' ]
         then
-            printf "^c$red^^c$rosewater^ MUTED "
+            printf "^c$red^ VOL ^c$red^MUTED"
         else
-            printf "^c$lavender^ ^c$rosewater^ $volume%% "
+            printf "^c$lavender^ VOL ^c$red^$volume%%"
         fi
 }
 
@@ -83,7 +83,7 @@ get_volume(){
 mem() {
   memory=$(free -h | awk '/^Mem/ { print $3 }')
   
-  printf "^c$lavender^ ^c$rosewater^ $memory "
+  printf "^c$lavender^ MEM ^c$red^$memory"
  	  # printf "^c$red^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
@@ -104,8 +104,8 @@ weather() {
 # }
 
 clock() {
-  printf "^c$lavender^ "
-	printf "^c$rosewater^ $(date '+%I:%M %a' | sed 's/.*/\U&/')"
+  printf "^c$lavender^ $(date '+%a ' | sed 's/.*/\U&/')"
+	printf "^c$red^$(date '+%I:%M%p')"
 }
 
 while true; do
@@ -113,6 +113,6 @@ while true; do
 	[ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
 	interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(spotify) $(mem) $(pkg_updates) $(get_volume) $(clock)"
+  sleep 1 && xsetroot -name "$(mem) $(pkg_updates) $(get_volume) $(clock)"
 done
 
