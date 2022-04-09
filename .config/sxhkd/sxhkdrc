@@ -15,28 +15,28 @@
 #	sh ~/.config/bspwm/rofi/bin/{powermenu,asroot,screenshot,network,windows,spd}
 
 # Dmenu scripts
-super + x
-  sh ~/.config/scripts/dmenu_power.sh
+# super + x
+#   sh ~/.config/scripts/dmenu_power.sh
 
-Print
-  sh ~/.config/scripts/dmenu_screenshot.sh
+# Print
+#   sh ~/.config/scripts/dmenu_screenshot.sh
 
 ##---------- Applications ----------##
 
 # Launch Apps
-super + {w,e,d}
-	{firefox,pcmanfm,discord}
+# super + {e,d}
+# 	{pcmanfm,discord}
 
 # Terminal Apps
-ctrl + alt + {t,n,h,r,s}
-	st -e {tuir,lvim,htop,ranger,ncspot}
+# ctrl + alt + {t,h,r,s}
+# 	st -e {tuir,htop,ranger,ncspot}
 
-XF86Calculator
-  st -e qalc
+# XF86Calculator
+#   st -e qalc
 
 # Lockscreen
-ctrl + alt + l
-   slock
+# ctrl + alt + l
+#    slock
 
 ##---------- System Keys ----------##
 
@@ -47,14 +47,14 @@ ctrl + alt + l
 #XF86AudioMute
 #	volume --toggle
 
-XF86AudioRaiseVolume
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+# XF86AudioRaiseVolume
+#     pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-XF86AudioLowerVolume
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+# XF86AudioLowerVolume
+#     pactl set-sink-volume @DEFAULT_SINK@ -5%
 
-XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
+# XF86AudioMute
+#     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 ##---------- Bspwm ----------##
 
