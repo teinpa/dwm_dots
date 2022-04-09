@@ -16,7 +16,8 @@ alias zshalias="v ~/.config/slimzsh/aliases.zsh.local"
 alias addtor="transmission-remote -a"
 alias smci="sudo make clean install"
 alias vkey="lvim ~/.config/sxhkd/sxhkdrc"
-alias wttr="curl -s wttr.in/Seoul?format=%c+%t | sed 's/+,%//g'"
+alias wttr1="curl -s wttr.in/Seoul?format=%c+%t | sed 's/+,%//g'"
+alias wttr="dunstify `wttr1`"
 
 # flexipatches
 alias getst="git clone https://github.com/bakkeby/st-flexipatch.git"
