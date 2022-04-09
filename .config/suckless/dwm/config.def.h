@@ -1,23 +1,23 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 3; /* border pixel of windows */
+static const unsigned int borderpx = 4; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int swallowfloating =
     0; /* 1 means swallow floating windows by default */
-static const unsigned int gappih = 15; /* horiz inner gap between windows */
-static const unsigned int gappiv = 15; /* vert inner gap between windows */
+static const unsigned int gappih = 35; /* horiz inner gap between windows */
+static const unsigned int gappiv = 35; /* vert inner gap between windows */
 static const unsigned int gappoh =
-    15; /* horiz outer gap between windows and screen edge */
+    35; /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov =
-    15; /* vert outer gap between windows and screen edge */
+    35; /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact =
     1; /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer
           gaps */
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
-static const int vertpad = 0; /* vertical padding of bar */
-static const int sidepad = 0; /* horizontal padding of bar */
+static const int vertpad = 5; /* vertical padding of bar */
+static const int sidepad = 5; /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index),
  * 'A' (active monitor) */
 static const int statusmon = 'A';
@@ -59,7 +59,7 @@ static char tagsnormbgcolor[] = "#1e1e2e";
 static char tagsnormbordercolor[] = "#1e1e2e";
 static char tagsnormfloatcolor[] = "#c9cbff";
 
-static char tagsselfgcolor[] = "#f5e0dc";
+static char tagsselfgcolor[] = "#f28fad";
 static char tagsselbgcolor[] = "#1e1e2e";
 static char tagsselbordercolor[] = "#1e1e2e";
 static char tagsselfloatcolor[] = "#ddb6f2";
@@ -174,10 +174,19 @@ static const Rule rules[] = {
  * providing bar module width, draw and click functions name - does nothing,
  * intended for visual clue and for logging / debugging
  */
+/*
+int width_centered_wintitle(Bar *bar, BarArg *a) {
+  if (!selmon->sel)
+    return 0;
+
+  return TEXTW(selmon->sel->name);
+}
+*/
+
 static const BarRule barrules[] = {
     /* monitor   bar    alignment         widthfunc                drawfunc
        clickfunc                name */
-    {-1, 0, BAR_ALIGN_NONE, width_ltsymbol, draw_ltsymbol, click_ltsymbol,
+    {-1, 0, BAR_ALIGN_LEFT, width_ltsymbol, draw_ltsymbol, click_ltsymbol,
      "layout"},
     {-1, 0, BAR_ALIGN_LEFT, width_tags, draw_tags, click_tags, "tags"},
     {0, 0, BAR_ALIGN_RIGHT, width_systray, draw_systray, click_systray,
@@ -198,9 +207,9 @@ static const int lockfullscreen =
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"侀", tile}, /* first entry is default */
-    {"恵", monocle}, {"頻", centeredmaster},
-    {"充", NULL}, /* no layout function means floating behavior */
+    {"TILE", tile}, /* first entry is default */
+    {"MNCL", monocle}, {"CTRM", centeredmaster},
+    {"NULL", NULL}, /* no layout function means floating behavior */
     {NULL, NULL},
 };
 
