@@ -227,6 +227,8 @@ static const Layout layouts[] = {
     .v = (const char *[]) { "/bin/sh", "-c", cmd, NULL }                       \
   }
 
+#include <X11/XF86keysym.h>
+
 /* commands */
 static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -266,6 +268,24 @@ static Key keys[] = {
     {MODKEY | ShiftMask, XK_f, togglefullscreen, {0}},
     {MODKEY, XK_comma, cyclelayout, {.i = -1}},
     {MODKEY, XK_period, cyclelayout, {.i = +1}},
+    {MODKEY, XK_w, spawn, SHCMD("firefox")},
+    {MODKEY, XK_e, spawn, SHCMD("Pcmanfm")},
+    {MODKEY, XK_d, spawn, SHCMD("discord")},
+    {MODKEY, XK_x, spawn, SHCMD("$HOME/.config/scripts/dmenu_power.sh")},
+    {0, XK_Print, spawn, SHCMD("$HOME/.config/scripts/dmenu_screenshot.sh")},
+    {0, XF86XK_Calculator, spawn, SHCMD("st -e qalc")},
+    {0, XF86XK_AudioRaiseVolume, spawn,
+     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},
+    {0, XF86XK_AudioLowerVolume, spawn,
+     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%")},
+    {0, XF86XK_AudioMute, spawn,
+     SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
+    {ControlMask | Mod1Mask, XK_l, spawn, SHCMD("slock")},
+    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("st -e lvim")},
+    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("st -e tuir")},
+    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("st -e ranger")},
+    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("st -e ncspot")},
+    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("st -e htop")},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4)};
 
