@@ -10,7 +10,8 @@ alias clean="yay -Yc"
 
 # convinience #
 alias ls="exa --group-directories-first --icons -la"
-alias v="lvim"
+alias v="helix"
+# alias hx="helix"
 alias z="zathura"
 alias zshalias="v ~/.config/slimzsh/aliases.zsh.local"
 alias addtor="transmission-remote -a"
