@@ -269,7 +269,7 @@ static Key keys[] = {
     {MODKEY, XK_comma, cyclelayout, {.i = -1}},
     {MODKEY, XK_period, cyclelayout, {.i = +1}},
     {MODKEY, XK_w, spawn, SHCMD("firefox")},
-    {MODKEY, XK_e, spawn, SHCMD("Pcmanfm")},
+    {MODKEY, XK_e, spawn, SHCMD("pcmanfm")},
     {MODKEY, XK_d, spawn, SHCMD("discord")},
     {MODKEY, XK_x, spawn, SHCMD("$HOME/.config/scripts/dmenu_power.sh")},
     {0, XK_Print, spawn, SHCMD("$HOME/.config/scripts/dmenu_screenshot.sh")},
