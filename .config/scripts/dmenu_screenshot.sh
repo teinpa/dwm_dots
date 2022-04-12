@@ -13,7 +13,7 @@ notify_user () {
 
 # fullscreen shot
 shotnow () {
-  cd ${dir} && sleep 2 && maim -u -f png -m 3 "$file"
+  cd ${dir} && sleep 1 && maim -u -f png -m 3 "$file"
   notify_user
 }
 
