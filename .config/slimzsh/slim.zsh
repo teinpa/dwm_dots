@@ -15,9 +15,9 @@ export STARSHIP_CONFIG=~/.config/starship/pastel-powerline.toml
 
 autoload -Uz compinit
 
-for dump in ~/.zcompdump(N.mh+24); do
-   compinit
-done
+# for dump in ~/.zcompdump(N.mh+24); do
+#    compinit
+# done
 
 compinit -C
 

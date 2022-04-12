@@ -4,25 +4,19 @@
 alias lastins="awk '\$3 ~ /installed/' /var/log/pacman.log | tail --lines=20"
 alias lastuns="awk '\$3 ~ /removed/' /var/log/pacman.log | tail --lines=20"
 alias lastupg="awk '\$3 ~ /upgraded/' /var/log/pacman.log | tail --lines=20"
-# alias update="sudo yay"
-# alias updatea="sudo aura -Akuax"
 alias clean="yay -Yc"
 
 # convinience #
 alias ls="exa --group-directories-first --icons -la"
-alias v="helix"
-# alias hx="helix"
+alias v="lvim"
 alias z="zathura"
 alias zshalias="v ~/.config/slimzsh/aliases.zsh.local"
 alias addtor="transmission-remote -a"
-alias smci="sudo make clean install"
-alias vkey="lvim ~/.config/sxhkd/sxhkdrc"
 alias wttr1="curl -s wttr.in/Seoul?format=%c+%t | sed 's/+,%//g'"
-alias wttr="dunstify `wttr1`"
 
 # flexipatches
-alias getst="git clone https://github.com/bakkeby/st-flexipatch.git"
-alias getdmenu="git clone https://github.com/bakkeby/dmenu-flexipatch.git"
+alias getst="git clone --depth=1 https://github.com/bakkeby/st-flexipatch.git"
+alias getdmenu="git clone --depth=1 https://github.com/bakkeby/dmenu-flexipatch.git"
 alias getdwm="git clone --depth=1 https://github.com/bakkeby/dwm-flexipatch.git"
 alias dwmdir="cd ~/.config/suckless/"
 alias makedwm="sudo rm config.h && sudo make clean install"
