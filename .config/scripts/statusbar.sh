@@ -58,15 +58,27 @@ pkg_updates() {
 # 	# fi
 # }
 
+# get_volume(){
+#   curStatus=$(pactl get-sink-mute @DEFAULT_SINK@)
+#   volume=$(pactl get-sink-volume @DEFAULT_SINK@ | tail -n 2 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' | head -n 1)
+
+#         if [ "${curStatus}" = 'Mute: yes' ]
+#         then
+#             printf "^c$red^ VOL ^c$red^MUTED"
+#         else
+#             printf "^c$lavender^ VOL ^c$red^$volume%%"
+#         fi
+# }
+
 get_volume(){
   curStatus=$(pactl get-sink-mute @DEFAULT_SINK@)
-  volume=$(pactl get-sink-volume @DEFAULT_SINK@ | tail -n 2 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' | head -n 1)
+  volume=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')
 
         if [ "${curStatus}" = 'Mute: yes' ]
         then
             printf "^c$red^ VOL ^c$red^MUTED"
         else
-            printf "^c$lavender^ VOL ^c$red^$volume%%"
+            printf "^c$lavender^ VOL ^c$red^$volume%"
         fi
 }
 
