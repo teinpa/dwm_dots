@@ -174,6 +174,7 @@ static const Rule rules[] = {
  * providing bar module width, draw and click functions name - does nothing,
  * intended for visual clue and for logging / debugging
  */
+
 /*
 int width_centered_wintitle(Bar *bar, BarArg *a) {
   if (!selmon->sel)
@@ -184,8 +185,8 @@ int width_centered_wintitle(Bar *bar, BarArg *a) {
 */
 
 static const BarRule barrules[] = {
-    /* monitor   bar    alignment         widthfunc                drawfunc
-       clickfunc                name */
+    /* monitor   bar    alignment         widthfunc          drawfunc
+       clickfunc          name */
     {-1, 0, BAR_ALIGN_LEFT, width_ltsymbol, draw_ltsymbol, click_ltsymbol,
      "layout"},
     {-1, 0, BAR_ALIGN_LEFT, width_tags, draw_tags, click_tags, "tags"},
@@ -193,7 +194,7 @@ static const BarRule barrules[] = {
      "systray"},
     {statusmon, 0, BAR_ALIGN_RIGHT, width_status2d, draw_status2d,
      click_status2d, "status2d"},
-    {-1, 0, BAR_ALIGN_LEFT, width_wintitle, draw_wintitle, click_wintitle,
+    {-1, 0, BAR_ALIGN_RIGHT, width_wintitle, draw_wintitle, click_wintitle,
      "wintitle"},
 };
 
