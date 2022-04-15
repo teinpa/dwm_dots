@@ -4,7 +4,6 @@
 # ^b$var^ = bg color
 
 interval=0
-
 # load colors
 . ~/.config/scripts/cat_stat
 
@@ -28,7 +27,7 @@ spotify() {
         SEP1=" | "
         if [ "$STATUS" = "Playing" ]; then
             # STATUS="PLA"
-            printf "^c$lavender^ SPT ^c$red^$ARTIST - $TRACK"
+            printf "^c$lavender^ $ARTIST ^c$red^$TRACK"
         # else
             # STATUS="PAU"
             # printf "^b$red^^c$black^ PAU ^b$black^^c$red^ $ARTIST - $TRACK "
@@ -48,27 +47,6 @@ pkg_updates() {
 	# fi
 }
 
-# pkg_updates() {
-# 	updates=$(checkupdates | wc -l)   # arch , needs pacman contrib
-
-# 	# if [[ -z "$updates" ]]; then
-# 	# 	printf "^c$black^^b$yellow^ PKG ^d^ Fully Updated "
-# 	# else
-# 	printf "^c$black^^b$yellow^ PKG ^c$yellow^^b$black^  $updates "
-# 	# fi
-# }
-
-# get_volume(){
-#   curStatus=$(pactl get-sink-mute @DEFAULT_SINK@)
-#   volume=$(pactl get-sink-volume @DEFAULT_SINK@ | tail -n 2 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' | head -n 1)
-
-#         if [ "${curStatus}" = 'Mute: yes' ]
-#         then
-#             printf "^c$red^ VOL ^c$red^MUTED"
-#         else
-#             printf "^c$lavender^ VOL ^c$red^$volume%%"
-#         fi
-# }
 
 get_volume(){
   curStatus=$(pactl get-sink-mute @DEFAULT_SINK@)
@@ -96,15 +74,15 @@ mem() {
   memory=$(free -h | awk '/^Mem/ { print $3 }')
   
   printf "^c$lavender^ MEM ^c$red^$memory"
- 	  # printf "^c$red^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+# printf "^c$red^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
 weather() {
-  cond=$(curl -s wttr.in/Seoul?format=%t | sed 's/+//g')
-  temp=$(curl -s wttr.in/Seoul?format=%C)
+  temp=$(curl -s wttr.in/Seoul?format=%t | sed 's/+//g')
+  cond=$(curl -s wttr.in/Seoul?format=%C)
 
-  printf "^b$blue^^c$black^ $cond ^d^ "
-  printf "^c$blue^ $temp^d^ "
+  printf "^c$lavender^ $cond ^c$red^$temp"
+  # printf "^c$red^ $temp"
   #dunstify "$(curl -s 'wttr.in/Seoul?format=%C+%t' | sed 's/+//g')"
 }
 
@@ -125,6 +103,6 @@ while true; do
 	[ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
 	interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(mem) $(pkg_updates) $(get_volume) $(clock)"
+  sleep 1 && xsetroot -name "$(spotify) $(mem) $(pkg_updates) $(get_volume) $(clock)"
 done
 
