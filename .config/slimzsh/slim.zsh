@@ -34,6 +34,7 @@ source $slim_path/completion.zsh
 # source $slim_path/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $slim_path/aliases.zsh
 source $slim_path/correction.zsh
+source $slim_path/sudo.plugin.zsh
 source $slim_path/stack.zsh
 source $slim_path/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
