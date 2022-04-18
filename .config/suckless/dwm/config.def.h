@@ -194,7 +194,7 @@ static const BarRule barrules[] = {
      "systray"},
     {statusmon, 0, BAR_ALIGN_RIGHT, width_status2d, draw_status2d,
      click_status2d, "status2d"},
-    {-1, 0, BAR_ALIGN_RIGHT, width_wintitle, draw_wintitle, click_wintitle,
+    {-1, 0, BAR_ALIGN_CENTER, width_wintitle, draw_wintitle, click_wintitle,
      "wintitle"},
 };
 
