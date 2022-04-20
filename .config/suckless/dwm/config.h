@@ -29,7 +29,7 @@ static int tagindicatortype = INDICATOR_BOTTOM_BAR;
 static int tiledindicatortype = INDICATOR_NONE;
 static int floatindicatortype = INDICATOR_NONE;
 static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=11",
-                              "D2Coding:size=10", "JoyPixels:size=10"};
+                              "NanumBarunGothic:size=10", "JoyPixels:size=10"};
 static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=11";
 
 static char c000000[] = "#000000"; // placeholder value
