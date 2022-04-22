@@ -71,9 +71,9 @@ get_volume(){
 # }
 
 mem() {
-  memory=$(free -h | awk '/^Mem/ { print $3 }')
+  memory=$(free -t | awk 'FNR == 2 {printf("%.0f%"), $3/$2*100}')
   
-  printf "^c$lavender^ MEM ^c$red^$memory"
+  printf "^c$lavender^ MEM ^c$red^$memory%"
 # printf "^c$red^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
