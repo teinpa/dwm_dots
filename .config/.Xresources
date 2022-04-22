@@ -1,3 +1,6 @@
 Xcursor.theme: Catppuccin-Dark-Cursors
 Xcursor.size: 48
 
+Sxiv.background: #1e1e2e
+Sxiv.foreground: #c9cbff
+
