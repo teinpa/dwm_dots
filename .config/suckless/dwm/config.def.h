@@ -28,9 +28,9 @@ static const int showsystray = 1;             /* 0 means no systray */
 static int tagindicatortype = INDICATOR_BOTTOM_BAR;
 static int tiledindicatortype = INDICATOR_NONE;
 static int floatindicatortype = INDICATOR_NONE;
-static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=11",
+static const char *fonts[] = {"CaskaydiaCove Nerd Font:size=10",
                               "NanumBarunGothic:size=10", "JoyPixels:size=10"};
-static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=11";
+static const char dmenufont[] = "CaskaydiaCove Nerd Font:size=10";
 
 static char c000000[] = "#000000"; // placeholder value
 
