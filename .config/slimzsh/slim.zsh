@@ -11,7 +11,7 @@ bindkey -v
 
 # autoload -U promptinit && promptinit
 # prompt pure
-export STARSHIP_CONFIG=~/.config/starship/pastel-powerline.toml
+export STARSHIP_CONFIG=~/.config/starship/bubble.toml
 
 autoload -Uz compinit
 
