@@ -508,4 +508,4 @@ static char ascii_printable[] = " !\"#$%&'()*+,-./0123456789:;<=>?"
 #define UNDERCURL_SPIKY 1
 #define UNDERCURL_CAPPED 2
 // Active style
-#define UNDERCURL_STYLE UNDERCURL_SPIKY
+#define UNDERCURL_STYLE 0
