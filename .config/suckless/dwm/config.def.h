@@ -162,17 +162,17 @@ static const Rule rules[] = {
                     RULE(.class = "discord", .tags = 1 << 4)
                         RULE(.class = "st", .isterminal = 1)};
 
-/* Bar rules allow you to configure what is shown where on the bar, as well as
- * introducing your own bar modules.
+/* Bar rules allow you to configure what is shown where on the bar, as well
+ * as introducing your own bar modules.
  *
  *    monitor:
  *      -1  show on all monitors
  *       0  show on monitor 0
  *      'A' show on active monitor (i.e. focused / selected) (or just -1 for
  * active?) bar - bar index, 0 is default, 1 is extrabar alignment - how the
- * module is aligned compared to other modules widthfunc, drawfunc, clickfunc -
- * providing bar module width, draw and click functions name - does nothing,
- * intended for visual clue and for logging / debugging
+ * module is aligned compared to other modules widthfunc, drawfunc,
+ * clickfunc - providing bar module width, draw and click functions name -
+ * does nothing, intended for visual clue and for logging / debugging
  */
 
 /*
@@ -237,7 +237,7 @@ static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
     "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
     "20",        "-W",  "2520",    "-p",  " RUN : ", NULL};
-static const char *termcmd[] = {"st", NULL};
+static const char *termcmd[] = {"kitty", NULL};
 
 static Key keys[] = {
     /* modifier                     key            function argument */
