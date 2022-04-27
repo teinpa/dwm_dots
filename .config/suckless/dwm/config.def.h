@@ -28,9 +28,9 @@ static const int showsystray = 1;             /* 0 means no systray */
 static int tagindicatortype = INDICATOR_BOTTOM_BAR;
 static int tiledindicatortype = INDICATOR_NONE;
 static int floatindicatortype = INDICATOR_NONE;
-static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=10",
-                              "NanumBarunGothic:size=10", "JoyPixels:size=10"};
-static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=10";
+static const char *fonts[] = {"CaskaydiaCove Nerd Font:size=9",
+                              "NanumBarunGothic:size=9", "JoyPixels:size=9"};
+static const char dmenufont[] = "CaskaydiaCove Nerd Font:size=9";
 
 static char c000000[] = "#000000"; // placeholder value
 
@@ -160,7 +160,7 @@ static const Rule rules[] = {
             RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
                 RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
                     RULE(.class = "discord", .tags = 1 << 4)
-                        RULE(.class = "st", .isterminal = 1)};
+                        RULE(.class = "kitty", .isterminal = 1)};
 
 /* Bar rules allow you to configure what is shown where on the bar, as well
  * as introducing your own bar modules.
@@ -274,7 +274,7 @@ static Key keys[] = {
     {MODKEY, XK_d, spawn, SHCMD("discord")},
     {MODKEY, XK_x, spawn, SHCMD("$HOME/.config/scripts/dmenu_power.sh")},
     {0, XK_Print, spawn, SHCMD("$HOME/.config/scripts/dmenu_screenshot.sh")},
-    {0, XF86XK_Calculator, spawn, SHCMD("st -e qalc")},
+    {0, XF86XK_Calculator, spawn, SHCMD("kitty -e qalc")},
     {0, XF86XK_AudioRaiseVolume, spawn,
      SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},
     {0, XF86XK_AudioLowerVolume, spawn,
@@ -282,11 +282,11 @@ static Key keys[] = {
     {0, XF86XK_AudioMute, spawn,
      SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
     {ControlMask | Mod1Mask, XK_l, spawn, SHCMD("slock")},
-    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("st -e lvim")},
-    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("st -e tuir")},
-    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("st -e ranger")},
-    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("st -e ncspot")},
-    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("st -e htop")},
+    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("kitty -e lvim")},
+    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("kitty -e tuir")},
+    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("kitty -e ranger")},
+    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("kitty -e ncspot")},
+    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("kitty -e htop")},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4)};
 
