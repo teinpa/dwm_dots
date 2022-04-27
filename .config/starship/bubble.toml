@@ -13,7 +13,7 @@ disabled = true
 disabled = true
 
 [directory]
-format = "[ $path](bg:#ddb6f2 fg:#1e1e2e bold)"
+format = "[ $path](bg:#ddb6f2 fg:#1e1e2e bold)"
 
 [git_branch]
 format = "[](#f8bd96)[on $symbol$branch](bg:#f8bd96 fg:#1e1e2e bold)[](#f8bd96) "
