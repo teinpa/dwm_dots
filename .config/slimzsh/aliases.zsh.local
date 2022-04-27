@@ -13,6 +13,7 @@ alias z="zathura"
 alias zshalias="v ~/.config/slimzsh/aliases.zsh.local"
 alias addtor="transmission-remote -a"
 alias wttr1="curl -s wttr.in/Seoul?format=%c+%t | sed 's/+,%//g'"
+alias kv="kitty +kitten icat"
 
 # flexipatches
 alias getst="git clone --depth=1 https://github.com/bakkeby/st-flexipatch.git"
