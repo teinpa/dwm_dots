@@ -6,11 +6,11 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font =
-    "FantasqueSansMono Nerd Font:pixelsize=17:antialias=true:autohint=true";
+    "CaskaydiaCove Nerd Font:pixelsize=14:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-    "JoyPixels:pixelsize=17:antialias=true:autohint=true",
-    "NanumBarunGothic:pixelsize=17:antialias=true:autohint=true",
+    "JoyPixels:pixelsize=14:antialias=true:autohint=true",
+    "NanumBarunGothic:pixelsize=14:antialias=true:autohint=true",
 };
 
 static int borderpx = 25;
