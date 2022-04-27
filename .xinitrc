@@ -19,7 +19,6 @@ xsidle.sh slock &
 xsetroot -cursor_name left_ptr &
 xset r rate 225 25 &
 numlockx &
-# sxhkd -c /home/hooxoo/.config/sxhkd/sxhkdrc &
 
 # notifications
 dunst &
