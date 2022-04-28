@@ -2,19 +2,18 @@
 add_newline = true
 
 # Use custom format
-format="[](#DDB6F2)$directory[](#ddb6f2) $git_branch[](bg: blue) "
+format="$directory$git_branch$character"
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
-
-# Remove nodejs 
-[nodejs]
-disabled = true
+# Prompt symbols 
+[character]
+success_symbol = "[](blue)"
+error_symbol = "[](red)"
+vicmd_symbol = "[](green)"
 
 [directory]
-format = "[ $path](bg:#ddb6f2 fg:#1e1e2e bold)"
+format = "[]($style)[  $path](bg:#ddb6f2 fg:#1e1e2e bold)[ ]($style)"
+style = "bg:#1e1e2e fg:#ddb6f2"
 
 [git_branch]
-format = "[](#f8bd96)[on $symbol$branch](bg:#f8bd96 fg:#1e1e2e bold)[](#f8bd96) "
-symbol = "\ue725 "
+format = "[]($style)[  $branch](bg:#f8bd96 fg:#1e1e2e bold)[ ]($style)"
+style = "bg:#1e1e2e fg:#f8bd96"
