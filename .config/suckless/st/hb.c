@@ -89,6 +89,10 @@ hbtransform(XftGlyphFontSpec *specs, const Glyph *glyphs, size_t len, int x, int
 		if (glyphs[i].mode & ATTR_WDUMMY)
 			continue;
 
+		if (glyphs[i].mode & ATTR_BOXDRAW) {
+			specidx++;
+			continue;
+		}
 
 		if (codepoints[i] != specs[specidx].glyph)
 			((Glyph *)glyphs)[i].mode |= ATTR_LIGA;

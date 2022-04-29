@@ -6,14 +6,16 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font =
-    "CaskaydiaCove Nerd Font:pixelsize=14:antialias=true:autohint=true";
+    "CaskaydiaCove Nerd Font:pixelsize=16:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-    "JoyPixels:pixelsize=14:antialias=true:autohint=true",
-    "NanumBarunGothic:pixelsize=14:antialias=true:autohint=true",
+    "JoyPixels:pixelsize=16:antialias=true:autohint=true",
+    "NanumBarunGothic:pixelsize=16:antialias=true:autohint=true",
 };
 
-static int borderpx = 25;
+/* borderperc: percentage of cell width to use as a border
+ *             0 = no border, 100 = border width is same as cell width */
+int borderperc = 200;
 
 static char *url_opener = "xdg-open";
 
@@ -77,6 +79,18 @@ static unsigned int blinktimeout = 800;
 static unsigned int cursorthickness = 2;
 
 /*
+ * 1: render most of the lines/blocks characters without using the font for
+ *    perfect alignment between cells (U2500 - U259F except dashes/diagonals).
+ *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
+ * 0: disable (render all U25XX glyphs normally from the font).
+ */
+const int boxdraw = 1;
+const int boxdraw_bold = 1;
+
+/* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
+const int boxdraw_braille = 1;
+
+/*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
  * it
  */
@@ -127,20 +141,13 @@ unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 258;
 
 /*
- * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
- * Default style of cursor
- * 0: Blinking block
- * 1: Blinking block (default)
- * 2: Steady block ("â–ˆ")
- * 3: Blinking underline
- * 4: Steady underline ("_")
- * 5: Blinking bar
- * 6: Steady bar ("|")
- * 7: Blinking st cursor
- * 8: Steady st cursor
+ * Default shape of cursor
+ * 2: Block ("█")
+ * 4: Underline ("_")
+ * 6: Bar ("|")
+ * 7: Snowman ("☃")
  */
-static unsigned int cursorstyle = 1;
-static Rune stcursor = 0x2603; /* snowman (U+2603) */
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
@@ -508,4 +515,4 @@ static char ascii_printable[] = " !\"#$%&'()*+,-./0123456789:;<=>?"
 #define UNDERCURL_SPIKY 1
 #define UNDERCURL_CAPPED 2
 // Active style
-#define UNDERCURL_STYLE 0
+#define UNDERCURL_STYLE UNDERCURL_SPIKY
