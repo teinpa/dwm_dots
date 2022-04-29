@@ -1,10 +1,9 @@
 # dwm_dots  
-dwm-flexipatch // st-flexipatch // dmenu-flexipatch  
-  
-# screenshot  
+
+## screenshot  
 ![Screenshot](/Pictures/screenshots/desktop.png)  
 
-# keybindings  
+## keybindings  
 | Key-binding | Action  |
 | :---  | :-----:  |
 | `Super + Shift + Return`  | launch dmenu  |
