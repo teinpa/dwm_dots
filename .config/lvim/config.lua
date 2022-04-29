@@ -14,7 +14,6 @@ lvim.format_on_save = true
 lvim.colorscheme = "catppuccin"
 vim.opt.relativenumber = true
 vim.opt.laststatus = 3
--- vim.opt.guifont = "FantasqueSansMono Nerd Font:h11"
 
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
