@@ -1,0 +1,24 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Use custom format
+format="$directory$git_branch$character"
+right_format="$cmd_duration"
+
+# Prompt symbols 
+[character]
+success_symbol = "[](blue)"
+error_symbol = "[](red)"
+vicmd_symbol = "[](green)"
+
+[directory]
+format = "[ ](bg:#ddb6f2)[   $path]($style bold)[ ](bg:#1e1e2e fg:#302d41)"
+style = "bg:#302d41 fg:#ddb6f2"
+
+[git_branch]
+format = "[ ](bg:#f8bd96)[   $branch]($style bold)[ ](bg:#1e1e2e fg:#302d41)"
+style = "bg:#302d41 fg:#f8bd96"
+
+[cmd_duration]
+min_time = 1
+format = "[](bg:#1e1e2e fg:#302d41)[  $duration ](fg:#f28fad bg:#302d41 bold)[ ](bg:#f28fad)"

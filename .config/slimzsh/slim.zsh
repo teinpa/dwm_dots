@@ -11,7 +11,7 @@ bindkey -v
 
 # autoload -U promptinit && promptinit
 # prompt pure
-export STARSHIP_CONFIG=~/.config/starship/bubble.toml
+export STARSHIP_CONFIG=~/.config/starship/tags.toml
 
 autoload -Uz compinit
 
