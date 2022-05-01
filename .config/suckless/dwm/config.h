@@ -273,7 +273,7 @@ static Key keys[] = {
     {MODKEY, XK_e, spawn, SHCMD("pcmanfm")},
     {MODKEY, XK_d, spawn, SHCMD("discord")},
     {MODKEY, XK_x, spawn, SHCMD("$HOME/.config/scripts/dmenu_power.sh")},
-    {0, XK_Print, spawn, SHCMD("$HOME/.config/scripts/dmenu_screenshot.sh")},
+    {MODKEY, XK_p, spawn, SHCMD("$HOME/.config/scripts/dmenu_screenshot.sh")},
     {0, XF86XK_Calculator, spawn, SHCMD("st -e qalc")},
     {0, XF86XK_AudioRaiseVolume, spawn,
      SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},
