@@ -36,7 +36,7 @@
 | `Super + e` | launch pcmanfm  |
 | `Super + d` | launch discord  |
 | `Super + x` | launch power menu script  |
-| `PrtSc` | launch screenshot menu script  |
+| `Super + p` | launch screenshot menu script  |
 | `Calculator` | launch qalculator  |
 | `AudioRaiseVolume` | increase volume 5%  |
 | `AudioLowerVolume` | decrease volume 5%  |
