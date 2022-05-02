@@ -18,7 +18,6 @@ xsidle.sh slock &
 # mouse and keyboard
 xsetroot -cursor_name left_ptr &
 xset r rate 225 25 &
-numlockx &
 
 # notifications
 dunst &
