@@ -5,7 +5,7 @@ RET=$(echo -e "shutdown\nreboot\nlogout\nlock\ncancel" | dmenu -nb "#1e1e2e" -nf
 case $RET in
 	shutdown) poweroff ;;
 	reboot) reboot ;;
-	logout) pkill -KILL -u $USER ;;
+	logout) pkill -KILL -u hooxoo ;;
   lock) exec slock ;;
 	*) ;;
 esac   
