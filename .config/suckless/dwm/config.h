@@ -29,7 +29,7 @@ static int tagindicatortype = INDICATOR_BOTTOM_BAR;
 static int tiledindicatortype = INDICATOR_NONE;
 static int floatindicatortype = INDICATOR_NONE;
 static const char *fonts[] = {"CaskaydiaCove Nerd Font:size=9",
-                              "Pretendard:size=9", "JoyPixels:size=9"};
+                              "IBM Plex Sans KR:size=9", "JoyPixels:size=9"};
 static const char dmenufont[] = "CaskaydiaCove Nerd Font:size=9";
 
 static char c000000[] = "#000000"; // placeholder value
