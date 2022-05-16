@@ -8,16 +8,16 @@ static const int swallowfloating =
 static const unsigned int gappih = 20; /* horiz inner gap between windows */
 static const unsigned int gappiv = 20; /* vert inner gap between windows */
 static const unsigned int gappoh =
-    20; /* horiz outer gap between windows and screen edge */
+    10; /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov =
-    20; /* vert outer gap between windows and screen edge */
+    10; /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact =
     1; /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer
           gaps */
 static const int showbar = 1;  /* 0 means no bar */
 static const int topbar = 1;   /* 0 means bottom bar */
 static const int vertpad = 5;  /* vertical padding of bar */
-static const int sidepad = 20; /* horizontal padding of bar */
+static const int sidepad = 10; /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index),
  * 'A' (active monitor) */
 static const int statusmon = 'A';
