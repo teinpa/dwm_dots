@@ -5,8 +5,8 @@ static const unsigned int borderpx = 5; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int swallowfloating =
     0; /* 1 means swallow floating windows by default */
-static const unsigned int gappih = 20; /* horiz inner gap between windows */
-static const unsigned int gappiv = 20; /* vert inner gap between windows */
+static const unsigned int gappih = 10; /* horiz inner gap between windows */
+static const unsigned int gappiv = 10; /* vert inner gap between windows */
 static const unsigned int gappoh =
     10; /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov =
@@ -160,7 +160,7 @@ static const Rule rules[] = {
             RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
                 RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
                     RULE(.class = "discord", .tags = 1 << 4)
-                        RULE(.class = "st", .isterminal = 1)};
+                        RULE(.class = "kitty", .isterminal = 1)};
 
 /* Bar rules allow you to configure what is shown where on the bar, as well
  * as introducing your own bar modules.
@@ -237,7 +237,7 @@ static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
     "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
     "20",        "-W",  "2520",    "-p",  " RUN : ", NULL};
-static const char *termcmd[] = {"st", NULL};
+static const char *termcmd[] = {"kitty", NULL};
 
 static Key keys[] = {
     /* modifier                     key            function argument */
@@ -282,11 +282,11 @@ static Key keys[] = {
     {0, XF86XK_AudioMute, spawn,
      SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
     {ControlMask | Mod1Mask, XK_l, spawn, SHCMD("slock")},
-    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("st -e lvim")},
-    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("st -e tuir")},
-    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("st -e ranger")},
-    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("st -e ncspot")},
-    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("st -e htop")},
+    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("kitty -e lvim")},
+    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("kitty -e tuir")},
+    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("kitty -e ranger")},
+    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("kitty -e ncspot")},
+    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("kitty -e htop")},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4)};
 
