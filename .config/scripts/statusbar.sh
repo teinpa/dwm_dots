@@ -51,7 +51,7 @@ get_volume(){
 
         if [ "${curStatus}" = 'Mute: yes' ]
         then
-            printf "^c$red^ VOL ^c$red^MUTED"
+            printf "^c$lavender^ VOL ^c$red^MUTED"
         else
             printf "^c$lavender^ VOL ^c$red^$volume%"
         fi
