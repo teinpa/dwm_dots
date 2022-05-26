@@ -127,7 +127,6 @@ ma_Crust=$(fromhex "#181926")
 
 # display, select, copy hex color codes
 echo -e "\n[ Catppuccin color selector ]"
-echo "Select flavor"
 echo -e "\n[01] Mocha     ${mo_Rosewater} ${mo_Flamingo} ${mo_Pink} ${mo_Mauve} ${mo_Red} ${mo_Maroon} ${mo_Peach} ${mo_Yellow} ${mo_Green} ${mo_Teal} ${mo_Sky} ${mo_Sapphire} ${mo_Blue} ${mo_Lavender} $(tput sgr0)"
 echo "[02] Latte     ${la_Rosewater} ${la_Flamingo} ${la_Pink} ${la_Mauve} ${la_Red} ${la_Maroon} ${la_Peach} ${la_Yellow} ${la_Green} ${la_Teal} ${la_Sky} ${la_Sapphire} ${la_Blue} ${la_Lavender} $(tput sgr0)"
 echo "[03] Frappe    ${fr_Rosewater} ${fr_Flamingo} ${fr_Pink} ${fr_Mauve} ${fr_Red} ${fr_Maroon} ${fr_Peach} ${fr_Yellow} ${fr_Green} ${fr_Teal} ${fr_Sky} ${fr_Sapphire} ${fr_Blue} ${fr_Lavender} $(tput sgr0)"
