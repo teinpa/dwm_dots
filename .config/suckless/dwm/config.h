@@ -236,7 +236,7 @@ static char dmenumon[2] =
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
     "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
-    "20",        "-W",  "2520",    "-p",  " RUN : ", NULL};
+    "10",        "-W",  "2520",    "-p",  " RUN : ", NULL};
 static const char *termcmd[] = {"kitty", NULL};
 
 static Key keys[] = {

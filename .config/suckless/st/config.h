@@ -85,7 +85,7 @@ static unsigned int cursorthickness = 2;
  * 0: disable (render all U25XX glyphs normally from the font).
  */
 const int boxdraw = 1;
-const int boxdraw_bold = 0;
+const int boxdraw_bold = 1;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
 const int boxdraw_braille = 1;
@@ -119,15 +119,15 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
     /* 8 normal colors */
-    "#6E6C7E", "#F28FAD", "#ABE9B3", "#FAE3B0", "#96CDFB", "#F5C2E7", "#89DCEB",
+    "#393939", "#ff7eb6", "#42be65", "#be95ff", "#33b1ff", "#ee5396", "#3ddbd9",
     "#D9E0EE",
 
     /* 8 bright colors */
-    "#988BA2", "#F28FAD", "#ABE9B3", "#FAE3B0", "#96CDFB", "#F5C2E7", "#89DCEB",
-    "#D9E0EE",
+    "#525252", "#ff73b6", "#42be65", "#be95ff", "#33b1ff", "#ee5396", "#3ddbd9",
+    "#f2f4f8",
 
-    [256] = "#D9E0EE", /* default foreground colour */
-    [257] = "#1E1E2E", /* default background colour */
+    [256] = "#f2f4f8", /* default foreground colour */
+    [257] = "#161616", /* default background colour */
     [258] = "#C3BAC6", /*575268*/
 
 };
