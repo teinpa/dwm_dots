@@ -152,84 +152,84 @@ echo
     read -p "Select number to copy hex code [1~26]: " sel
       if [ $sel = 1 ] ; then
         echo -e "${mo_Rosewater}\x1b[30;2mRosewater$(tput sgr0) copied to clipboard"
-        echo "#f5e0dc" | xclip -sel clip
+        printf "#f5e0dc" | xclip -sel clip
       elif [ $sel = 2 ] ; then
         echo -e "${mo_Flamingo}\x1b[30;2mFlamingo$(tput sgr0) copied to clipboard"
-        echo "#f2cdcd" | xclip -sel clip
+        printf "#f2cdcd" | xclip -sel clip
       elif [ $sel = 3 ] ; then
         echo -e "${mo_Pink}\x1b[30;2mPink$(tput sgr0) copied to clipboard"
-        echo "#f5c2e7" | xclip -sel clip
+        printf "#f5c2e7" | xclip -sel clip
       elif [ $sel = 4 ] ; then
         echo -e "${mo_Mauve}\x1b[30;2mMauve$(tput sgr0) copied to clipboard"
-        echo "#cba6f7" | xclip -sel clip
+        printf "#cba6f7" | xclip -sel clip
       elif [ $sel = 5 ] ; then
         echo -e "${mo_Red}\x1b[30;2mRed$(tput sgr0) copied to clipboard"
-        echo "#f38ba8" | xclip -sel clip
+        printf "#f38ba8" | xclip -sel clip
       elif [ $sel = 6 ] ; then
         echo -e "${mo_Maroon}\x1b[30;2mMaroon$(tput sgr0) copied to clipboard"
-        echo "#eba0ac" | xclip -sel clip
+        printf "#eba0ac" | xclip -sel clip
       elif [ $sel = 7 ] ; then
         echo -e "${mo_Peach}\x1b[30;2mPeach$(tput sgr0) copied to clipboard"
-        echo "#fab387" | xclip -sel clip
+        printf "#fab387" | xclip -sel clip
       elif [ $sel = 8 ] ; then
         echo -e "${mo_Yellow}\x1b[30;2mYellow$(tput sgr0) copied to clipboard"
-        echo "#f9e2af" | xclip -sel clip
+        printf "#f9e2af" | xclip -sel clip
       elif [ $sel = 9 ] ; then
         echo -e "${mo_Green}\x1b[30;2mGreen$(tput sgr0) copied to clipboard"
-        echo "#a6e3a1" | xclip -sel clip
+        printf "#a6e3a1" | xclip -sel clip
       elif [ $sel = 10 ] ; then
         echo -e "${mo_Teal}\x1b[30;2mTeal$(tput sgr0) copied to clipboard"
-        echo "#95e2d5" | xclip -sel clip
+        printf "#95e2d5" | xclip -sel clip
       elif [ $sel = 11 ] ; then
         echo -e "${mo_Sky}\x1b[30;2mSky$(tput sgr0) copied to clipboard"
-        echo "#89dceb" | xclip -sel clip
+        printf "#89dceb" | xclip -sel clip
       elif [ $sel = 12 ] ; then
         echo -e "${mo_Sapphire}\x1b[30;2mSapphire$(tput sgr0) copied to clipboard"
-        echo "#74c7ec" | xclip -sel clip
+        printf "#74c7ec" | xclip -sel clip
       elif [ $sel = 13 ] ; then
         echo "${mo_Blue}Blue$(tput sgr0) copied to clipboard"
-        echo "#87b0f9" | xclip -sel clip
+        printf "#87b0f9" | xclip -sel clip
       elif [ $sel = 14 ] ; then
         echo -e "${mo_Lavender}\x1b[30;2mLavender$(tput sgr0) copied to clipboard"
-        echo "#b4befe" | xclip -sel clip
+        printf "#b4befe" | xclip -sel clip
       elif [ $sel = 15 ] ; then
         echo -e "${mo_Text}\x1b[30;2mText$(tput sgr0) copied to clipboard"
-        echo "#c6d0f5" | xclip -sel clip
+        printf "#c6d0f5" | xclip -sel clip
       elif [ $sel = 16 ] ; then
         echo "${mo_Subtext1}Subtext 1$(tput sgr0) copied to clipboard"
-        echo "#b3bcdf" | xclip -sel clip
+        printf "#b3bcdf" | xclip -sel clip
       elif [ $sel = 17 ] ; then
         echo "${mo_Subtext0}Subtext 0$(tput sgr0) copied to clipboard"
-        echo "#a1a8c9" | xclip -sel clip
+        printf "#a1a8c9" | xclip -sel clip
       elif [ $sel = 18 ] ; then
         echo "${mo_Overlay2}Overlay 2$(tput sgr0) copied to clipboard"
-        echo "#8e95b3" | xclip -sel clip
+        printf "#8e95b3" | xclip -sel clip
       elif [ $sel = 19 ] ; then
         echo -e "${mo_Overlay1}\x1b[30;2mOverlay 1$(tput sgr0) copied to clipboard"
-        echo "#7b819d" | xclip -sel clip
+        printf "#7b819d" | xclip -sel clip
       elif [ $sel = 20 ] ; then
         echo -e "${mo_Overlay0}\x1b[30;2mOverlay 0$(tput sgr0) copied to clipboard"
-        echo "#696d86" | xclip -sel clip
+        printf "#696d86" | xclip -sel clip
       elif [ $sel = 21 ] ; then
         echo -e "${mo_Surface2}\x1b[30;2mSurface 2$(tput sgr0) copied to clipboard"
-        echo "#565970" | xclip -sel clip
+        printf "#565970" | xclip -sel clip
       elif [ $sel = 22 ] ; then
         echo -e "${mo_Surface1}\x1b[30;2mSurface 1$(tput sgr0) copied to clipboard"
-        echo "#43465a" | xclip -sel clip
+        printf "#43465a" | xclip -sel clip
       elif [ $sel = 23 ] ; then
         echo -e "${mo_Surface0}\x1b[30;2mSurface 0$(tput sgr0) copied to clipboard"
-        echo "#313244" | xclip -sel clip
+        printf "#313244" | xclip -sel clip
       elif [ $sel = 24 ] ; then
         echo -e "${mo_Base}\x1b[30;2mBase$(tput sgr0) copied to clipboard"
-        echo "#1e1e2e" | xclip -sel clip
+        printf "#1e1e2e" | xclip -sel clip
       elif [ $sel = 25 ] ; then
         echo -e "${mo_Mantle}\x1b[30;2mMantle$(tput sgr0) copied to clipboard"
-        echo "#181825" | xclip -sel clip
+        printf "#181825" | xclip -sel clip
       elif [ $sel = 26 ] ; then
         echo -e "${mo_Crust}\x1b[30;2mCrust$(tput sgr0) copied to clipboard"
-        echo "#11111b" | xclip -sel clip
+        printf "#11111b" | xclip -sel clip
       else
-        echo "invalid choice"
+        echo "Invalid choice"
     fi
   
   elif [ $flav = 2 ] ; then
@@ -250,82 +250,82 @@ echo
     read -p "Select number to copy hex code [1~26]: " sel
       if [ $sel = 1 ] ; then
         echo -e "${la_Rosewater}Rosewater$(tput sgr0) copied to clipboard"
-        echo "#dc8a78" | xclip -sel clip
+        printf "#dc8a78" | xclip -sel clip
       elif [ $sel = 2 ] ; then
         echo -e "${la_Flamingo}Flamingo$(tput sgr0) copied to clipboard"
-        echo "#dd7878" | xclip -sel clip
+        printf "#dd7878" | xclip -sel clip
       elif [ $sel = 3 ] ; then
         echo -e "${la_Pink}Pink$(tput sgr0) copied to clipboard"
-        echo "#ea76cb" | xclip -sel clip
+        printf "#ea76cb" | xclip -sel clip
       elif [ $sel = 4 ] ; then
         echo -e "${la_Mauve}Mauve$(tput sgr0) copied to clipboard"
-        echo "#8839ef" | xclip -sel clip
+        printf "#8839ef" | xclip -sel clip
       elif [ $sel = 5 ] ; then
         echo -e "${la_Red}Red$(tput sgr0) copied to clipboard"
-        echo "#d20f39" | xclip -sel clip
+        printf "#d20f39" | xclip -sel clip
       elif [ $sel = 6 ] ; then
         echo -e "${la_Maroon}Maroon$(tput sgr0) copied to clipboard"
-        echo "#e64553" | xclip -sel clip
+        printf "#e64553" | xclip -sel clip
       elif [ $sel = 7 ] ; then
         echo -e "${la_Peach}Peach$(tput sgr0) copied to clipboard"
-        echo "#fe640b" | xclip -sel clip
+        printf "#fe640b" | xclip -sel clip
       elif [ $sel = 8 ] ; then
         echo -e "${la_Yellow}Yellow$(tput sgr0) copied to clipboard"
-        echo "#df8e1d" | xclip -sel clip
+        printf "#df8e1d" | xclip -sel clip
       elif [ $sel = 9 ] ; then
         echo -e "${la_Green}Green$(tput sgr0) copied to clipboard"
-        echo "#40a02b" | xclip -sel clip
+        printf "#40a02b" | xclip -sel clip
       elif [ $sel = 10 ] ; then
         echo -e "${la_Teal}Teal$(tput sgr0) copied to clipboard"
-        echo "#179299" | xclip -sel clip
+        printf "#179299" | xclip -sel clip
       elif [ $sel = 11 ] ; then
         echo -e "${la_Sky}Sky$(tput sgr0) copied to clipboard"
-        echo "#04a5e5" | xclip -sel clip
+        printf "#04a5e5" | xclip -sel clip
       elif [ $sel = 12 ] ; then
         echo -e "${la_Sapphire}Sapphire$(tput sgr0) copied to clipboard"
-        echo "#209fb5" | xclip -sel clip
+        printf "#209fb5" | xclip -sel clip
       elif [ $sel = 13 ] ; then
         echo "${la_Blue}Blue$(tput sgr0) copied to clipboard"
-        echo "#1e66f5" | xclip -sel clip
+        printf "#1e66f5" | xclip -sel clip
       elif [ $sel = 14 ] ; then
         echo -e "${la_Lavender}Lavender$(tput sgr0) copied to clipboard"
-        echo "#7287fd" | xclip -sel clip
+        printf "#7287fd" | xclip -sel clip
       elif [ $sel = 15 ] ; then
         echo -e "${la_Text}Text$(tput sgr0) copied to clipboard"
-        echo "#C6D0F5" | xclip -sel clip
+        printf "#C6D0F5" | xclip -sel clip
       elif [ $sel = 16 ] ; then
         echo "${la_Subtext1}Subtext 1$(tput sgr0) copied to clipboard"
-        echo "#5c5f77" | xclip -sel clip
+        printf "#5c5f77" | xclip -sel clip
       elif [ $sel = 17 ] ; then
         echo "${la_Subtext0}Subtext 0$(tput sgr0) copied to clipboard"
-        echo "#6c6f85" | xclip -sel clip
+        printf "#6c6f85" | xclip -sel clip
       elif [ $sel = 18 ] ; then
         echo "${la_Overlay2}Overlay 2$(tput sgr0) copied to clipboard"
-        echo "#7c7f93" | xclip -sel clip
+        printf "#7c7f93" | xclip -sel clip
       elif [ $sel = 19 ] ; then
         echo -e "${la_Overlay1}Overlay 1$(tput sgr0) copied to clipboard"
-        echo "#8c8fa1" | xclip -sel clip
+        printf "#8c8fa1" | xclip -sel clip
       elif [ $sel = 20 ] ; then
         echo -e "${la_Overlay0}Overlay 0$(tput sgr0) copied to clipboard"
-        echo "#9ca0b0" | xclip -sel clip
+        printf "#9ca0b0" | xclip -sel clip
       elif [ $sel = 21 ] ; then
         echo -e "${la_Surface2}\x1b[30;2mSurface 2$(tput sgr0) copied to clipboard"
-        echo "#acb0be" | xclip -sel clip
+        printf "#acb0be" | xclip -sel clip
       elif [ $sel = 22 ] ; then
         echo -e "${la_Surface1}\x1b[30;2mSurface 1$(tput sgr0) copied to clipboard"
-        echo "#bcc0cc" | xclip -sel clip
+        printf "#bcc0cc" | xclip -sel clip
       elif [ $sel = 23 ] ; then
         echo -e "${la_Surface0}\x1b[30;2mSurface 0$(tput sgr0) copied to clipboard"
-        echo "#ccd0da" | xclip -sel clip
+        printf "#ccd0da" | xclip -sel clip
       elif [ $sel = 24 ] ; then
         echo -e "${la_Base}\x1b[30;2mBase$(tput sgr0) copied to clipboard"
-        echo "#eff1f5" | xclip -sel clip
+        printf "#eff1f5" | xclip -sel clip
       elif [ $sel = 25 ] ; then
         echo -e "${la_Mantle}\x1b[30;2mMantle$(tput sgr0) copied to clipboard"
-        echo "#e6e9ef" | xclip -sel clip
+        printf "#e6e9ef" | xclip -sel clip
       elif [ $sel = 26 ] ; then
         echo -e "${la_Crust}\x1b[30;2mCrust$(tput sgr0) copied to clipboard"
-        echo "#dce0e8" | xclip -sel clip
+        printf "#dce0e8" | xclip -sel clip
       else
         echo "invalid choice"
     fi
@@ -348,82 +348,82 @@ echo
     read -p "Select number to copy hex code [1~26]: " sel
       if [ $sel = 1 ] ; then
         echo -e "${fr_Rosewater}\x1b[30;2mRosewater$(tput sgr0) copied to clipboard"
-        echo "#f2d5cf" | xclip -sel clip
+        printf "#f2d5cf" | xclip -sel clip
       elif [ $sel = 2 ] ; then
         echo -e "${fr_Flamingo}\x1b[30;2mFlamingo$(tput sgr0) copied to clipboard"
-        echo "#eebebe" | xclip -sel clip
+        printf "#eebebe" | xclip -sel clip
       elif [ $sel = 3 ] ; then
         echo -e "${fr_Pink}\x1b[30;2mPink$(tput sgr0) copied to clipboard"
-        echo "#f4b8e4" | xclip -sel clip
+        printf "#f4b8e4" | xclip -sel clip
       elif [ $sel = 4 ] ; then
         echo -e "${fr_Mauve}\x1b[30;2mMauve$(tput sgr0) copied to clipboard"
-        echo "#ca9ee6" | xclip -sel clip
+        printf "#ca9ee6" | xclip -sel clip
       elif [ $sel = 5 ] ; then
         echo -e "${fr_Red}\x1b[30;2mRed$(tput sgr0) copied to clipboard"
-        echo "#e78284" | xclip -sel clip
+        printf "#e78284" | xclip -sel clip
       elif [ $sel = 6 ] ; then
         echo -e "${fr_Maroon}\x1b[30;2mMaroon$(tput sgr0) copied to clipboard"
-        echo "#ea999c" | xclip -sel clip
+        printf "#ea999c" | xclip -sel clip
       elif [ $sel = 7 ] ; then
         echo -e "${fr_Peach}\x1b[30;2mPeach$(tput sgr0) copied to clipboard"
-        echo "#ef9f76" | xclip -sel clip
+        printf "#ef9f76" | xclip -sel clip
       elif [ $sel = 8 ] ; then
         echo -e "${fr_Yellow}\x1b[30;2mYellow$(tput sgr0) copied to clipboard"
-        echo "#e5c890" | xclip -sel clip
+        printf "#e5c890" | xclip -sel clip
       elif [ $sel = 9 ] ; then
         echo -e "${fr_Green}\x1b[30;2mGreen$(tput sgr0) copied to clipboard"
-        echo "#a6d189" | xclip -sel clip
+        printf "#a6d189" | xclip -sel clip
       elif [ $sel = 10 ] ; then
         echo -e "${fr_Teal}\x1b[30;2mTeal$(tput sgr0) copied to clipboard"
-        echo "#81c8be" | xclip -sel clip
+        printf "#81c8be" | xclip -sel clip
       elif [ $sel = 11 ] ; then
         echo -e "${fr_Sky}\x1b[30;2mSky$(tput sgr0) copied to clipboard"
-        echo "#99d1db" | xclip -sel clip
+        printf "#99d1db" | xclip -sel clip
       elif [ $sel = 12 ] ; then
         echo -e "${fr_Sapphire}\x1b[30;2mSapphire$(tput sgr0) copied to clipboard"
-        echo "#85c1dc" | xclip -sel clip
+        printf "#85c1dc" | xclip -sel clip
       elif [ $sel = 13 ] ; then
         echo "${fr_Blue}Blue$(tput sgr0) copied to clipboard"
-        echo "#8caaee" | xclip -sel clip
+        printf "#8caaee" | xclip -sel clip
       elif [ $sel = 14 ] ; then
         echo -e "${fr_Lavender}\x1b[30;2mLavender$(tput sgr0) copied to clipboard"
-        echo "#babbf1" | xclip -sel clip
+        printf "#babbf1" | xclip -sel clip
       elif [ $sel = 15 ] ; then
         echo -e "${fr_Text}\x1b[30;2mText$(tput sgr0) copied to clipboard"
-        echo "#c6ceef" | xclip -sel clip
+        printf "#c6ceef" | xclip -sel clip
       elif [ $sel = 16 ] ; then
         echo "${fr_Subtext1}Subtext 1$(tput sgr0) copied to clipboard"
-        echo "#b5bddc" | xclip -sel clip
+        printf "#b5bddc" | xclip -sel clip
       elif [ $sel = 17 ] ; then
         echo "${fr_Subtext0}Subtext 0$(tput sgr0) copied to clipboard"
-        echo "#a5acc9" | xclip -sel clip
+        printf "#a5acc9" | xclip -sel clip
       elif [ $sel = 18 ] ; then
         echo "${fr_Overlay2}Overlay 2$(tput sgr0) copied to clipboard"
-        echo "#949bb7" | xclip -sel clip
+        printf "#949bb7" | xclip -sel clip
       elif [ $sel = 19 ] ; then
         echo -e "${fr_Overlay1}\x1b[30;2mOverlay 1$(tput sgr0) copied to clipboard"
-        echo "#838aa4" | xclip -sel clip
+        printf "#838aa4" | xclip -sel clip
       elif [ $sel = 20 ] ; then
         echo -e "${fr_Overlay0}\x1b[30;2mOverlay 0$(tput sgr0) copied to clipboard"
-        echo "#737891" | xclip -sel clip
+        printf "#737891" | xclip -sel clip
       elif [ $sel = 21 ] ; then
         echo -e "${fr_Surface2}\x1b[30;2mSurface 2$(tput sgr0) copied to clipboard"
-        echo "#62677e" | xclip -sel clip
+        printf "#62677e" | xclip -sel clip
       elif [ $sel = 22 ] ; then
         echo -e "${fr_Surface1}\x1b[30;2mSurface 1$(tput sgr0) copied to clipboard"
-        echo "#51566c" | xclip -sel clip
+        printf "#51566c" | xclip -sel clip
       elif [ $sel = 23 ] ; then
         echo -e "${fr_Surface0}\x1b[30;2mSurface 0$(tput sgr0) copied to clipboard"
-        echo "#414559" | xclip -sel clip
+        printf "#414559" | xclip -sel clip
       elif [ $sel = 24 ] ; then
         echo -e "${fr_Base}\x1b[30;2mBase$(tput sgr0) copied to clipboard"
-        echo "#303446" | xclip -sel clip
+        printf "#303446" | xclip -sel clip
       elif [ $sel = 25 ] ; then
         echo -e "${fr_Mantle}\x1b[30;2mMantle$(tput sgr0) copied to clipboard"
-        echo "#292c3c" | xclip -sel clip
+        printf "#292c3c" | xclip -sel clip
       elif [ $sel = 26 ] ; then
         echo -e "${fr_Crust}\x1b[30;2mCrust$(tput sgr0) copied to clipboard"
-        echo "#232634" | xclip -sel clip
+        printf "#232634" | xclip -sel clip
       else
         echo "invalid choice"
     fi
@@ -446,82 +446,82 @@ echo
     read -p "Select number to copy hex code [1~26]: " sel
       if [ $sel = 1 ] ; then
         echo -e "${ma_Rosewater}\x1b[30;2mRosewater$(tput sgr0) copied to clipboard"
-        echo "#f4dbd6" | xclip -sel clip
+        printf "#f4dbd6" | xclip -sel clip
       elif [ $sel = 2 ] ; then
         echo -e "${ma_Flamingo}\x1b[30;2mFlamingo$(tput sgr0) copied to clipboard"
-        echo "#f0c6c6" | xclip -sel clip
+        printf "#f0c6c6" | xclip -sel clip
       elif [ $sel = 3 ] ; then
         echo -e "${ma_Pink}\x1b[30;2mPink$(tput sgr0) copied to clipboard"
-        echo "#f5bde6" | xclip -sel clip
+        printf "#f5bde6" | xclip -sel clip
       elif [ $sel = 4 ] ; then
         echo -e "${ma_Mauve}\x1b[30;2mMauve$(tput sgr0) copied to clipboard"
-        echo "#c6a0f6" | xclip -sel clip
+        printf "#c6a0f6" | xclip -sel clip
       elif [ $sel = 5 ] ; then
         echo -e "${ma_Red}\x1b[30;2mRed$(tput sgr0) copied to clipboard"
-        echo "#ed8796" | xclip -sel clip
+        printf "#ed8796" | xclip -sel clip
       elif [ $sel = 6 ] ; then
         echo -e "${ma_Maroon}\x1b[30;2mMaroon$(tput sgr0) copied to clipboard"
-        echo "#ee99a0" | xclip -sel clip
+        printf "#ee99a0" | xclip -sel clip
       elif [ $sel = 7 ] ; then
         echo -e "${ma_Peach}\x1b[30;2mPeach$(tput sgr0) copied to clipboard"
-        echo "#f5a97f" | xclip -sel clip
+        printf "#f5a97f" | xclip -sel clip
       elif [ $sel = 8 ] ; then
         echo -e "${ma_Yellow}\x1b[30;2mYellow$(tput sgr0) copied to clipboard"
-        echo "#eed49f" | xclip -sel clip
+        printf "#eed49f" | xclip -sel clip
       elif [ $sel = 9 ] ; then
         echo -e "${ma_Green}\x1b[30;2mGreen$(tput sgr0) copied to clipboard"
-        echo "#a6da95" | xclip -sel clip
+        printf "#a6da95" | xclip -sel clip
       elif [ $sel = 10 ] ; then
         echo -e "${ma_Teal}\x1b[30;2mTeal$(tput sgr0) copied to clipboard"
-        echo "#8bd5ca" | xclip -sel clip
+        printf "#8bd5ca" | xclip -sel clip
       elif [ $sel = 11 ] ; then
         echo -e "${ma_Sky}\x1b[30;2mSky$(tput sgr0) copied to clipboard"
-        echo "#91d7e3" | xclip -sel clip
+        printf "#91d7e3" | xclip -sel clip
       elif [ $sel = 12 ] ; then
         echo -e "${ma_Sapphire}\x1b[30;2mSapphire$(tput sgr0) copied to clipboard"
-        echo "#7dc4e4" | xclip -sel clip
+        printf "#7dc4e4" | xclip -sel clip
       elif [ $sel = 13 ] ; then
         echo "${ma_Blue}Blue$(tput sgr0) copied to clipboard"
-        echo "#8aadf4" | xclip -sel clip
+        printf "#8aadf4" | xclip -sel clip
       elif [ $sel = 14 ] ; then
         echo -e "${ma_Lavender}\x1b[30;2mLavender$(tput sgr0) copied to clipboard"
-        echo "#b7bdf8" | xclip -sel clip
+        printf "#b7bdf8" | xclip -sel clip
       elif [ $sel = 15 ] ; then
         echo -e "${ma_Text}\x1b[30;2mText$(tput sgr0) copied to clipboard"
-        echo "#c5cff5" | xclip -sel clip
+        printf "#c5cff5" | xclip -sel clip
       elif [ $sel = 16 ] ; then
         echo "${ma_Subtext1}Subtext 1$(tput sgr0) copied to clipboard"
-        echo "#b3bce0" | xclip -sel clip
+        printf "#b3bce0" | xclip -sel clip
       elif [ $sel = 17 ] ; then
         echo "${ma_Subtext0}Subtext 0$(tput sgr0) copied to clipboard"
-        echo "#a1aacb" | xclip -sel clip
+        printf "#a1aacb" | xclip -sel clip
       elif [ $sel = 18 ] ; then
         echo "${ma_Overlay2}Overlay 2$(tput sgr0) copied to clipboard"
-        echo "#8f97b7" | xclip -sel clip
+        printf "#8f97b7" | xclip -sel clip
       elif [ $sel = 19 ] ; then
         echo -e "${ma_Overlay1}\x1b[30;2mOverlay 1$(tput sgr0) copied to clipboard"
-        echo "#7d84a2" | xclip -sel clip
+        printf "#7d84a2" | xclip -sel clip
       elif [ $sel = 20 ] ; then
         echo -e "${ma_Overlay0}\x1b[30;2mOverlay 0$(tput sgr0) copied to clipboard"
-        echo "#6c728d" | xclip -sel clip
+        printf "#6c728d" | xclip -sel clip
       elif [ $sel = 21 ] ; then
         echo -e "${ma_Surface2}\x1b[30;2mSurface 2$(tput sgr0) copied to clipboard"
-        echo "#5a5f78" | xclip -sel clip
+        printf "#5a5f78" | xclip -sel clip
       elif [ $sel = 22 ] ; then
         echo -e "${ma_Surface1}\x1b[30;2mSurface 1$(tput sgr0) copied to clipboard"
-        echo "#484c64" | xclip -sel clip
+        printf "#484c64" | xclip -sel clip
       elif [ $sel = 23 ] ; then
         echo -e "${ma_Surface0}\x1b[30;2mSurface 0$(tput sgr0) copied to clipboard"
-        echo "#363a4f" | xclip -sel clip
+        printf "#363a4f" | xclip -sel clip
       elif [ $sel = 24 ] ; then
         echo -e "${ma_Base}\x1b[30;2mBase$(tput sgr0) copied to clipboard"
-        echo "#24273a" | xclip -sel clip
+        printf "#24273a" | xclip -sel clip
       elif [ $sel = 25 ] ; then
         echo -e "${ma_Mantle}\x1b[30;2mMantle$(tput sgr0) copied to clipboard"
-        echo "#1e2030" | xclip -sel clip
+        printf "#1e2030" | xclip -sel clip
       elif [ $sel = 26 ] ; then
         echo -e "${ma_Crust}\x1b[30;2mCrust$(tput sgr0) copied to clipboard"
-        echo "#181926" | xclip -sel clip
+        printf "#181926" | xclip -sel clip
       else
         echo "invalid choice"
     fi
