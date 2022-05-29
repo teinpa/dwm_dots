@@ -62,7 +62,7 @@ lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
-lvim.builtin.lualine.active = false
+lvim.builtin.lualine.active = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -81,8 +81,8 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
--- lvim.builtin.lualine.options.theme = "catppuccin"
--- lvim.builtin.lualine.style = "lvim"
+lvim.builtin.lualine.options.theme = "catppuccin"
+lvim.builtin.lualine.style = "default"
 
 -- generic LSP settings
 
@@ -162,15 +162,12 @@ lvim.plugins = {
           })
         end,
     },
-
-      {"feline-nvim/feline.nvim",
-      config = function()
-        require("feline").setup({
-        components = require('catppuccin.core.integrations.feline'),
-          })
-        end,
-    }
+    -- {"feline-nvim/feline.nvim"},
 }
+-- require("feline").setup({
+--   components = require('catppuccin.core.integrations.feline'),
+-- })
+
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
