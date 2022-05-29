@@ -13,7 +13,6 @@
 /* Other patches */
 #include "attachx.c"
 #include "cfacts.c"
-#include "cyclelayouts.c"
 #include "focusdir.c"
 #include "movestack.c"
 #include "pertag.c"
@@ -26,7 +25,7 @@
 #include "zoomswap.c"
 /* Layouts */
 #include "layout_facts.c"
-#include "layout_centeredmaster.c"
+#include "layout_fibonacci.c"
 #include "layout_monocle.c"
 #include "layout_tile.c"
 

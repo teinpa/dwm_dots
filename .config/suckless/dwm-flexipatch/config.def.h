@@ -160,33 +160,23 @@ static const Rule rules[] = {
             RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
                 RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
                     RULE(.class = "discord", .tags = 1 << 4)
-                        RULE(.class = "kitty", .isterminal = 1)};
+                        RULE(.class = "st", .isterminal = 1)};
 
-/* Bar rules allow you to configure what is shown where on the bar, as well
- * as introducing your own bar modules.
+/* Bar rules allow you to configure what is shown where on the bar, as well as
+ * introducing your own bar modules.
  *
  *    monitor:
  *      -1  show on all monitors
  *       0  show on monitor 0
  *      'A' show on active monitor (i.e. focused / selected) (or just -1 for
  * active?) bar - bar index, 0 is default, 1 is extrabar alignment - how the
- * module is aligned compared to other modules widthfunc, drawfunc,
- * clickfunc - providing bar module width, draw and click functions name -
- * does nothing, intended for visual clue and for logging / debugging
+ * module is aligned compared to other modules widthfunc, drawfunc, clickfunc -
+ * providing bar module width, draw and click functions name - does nothing,
+ * intended for visual clue and for logging / debugging
  */
-
-/*
-int width_centered_wintitle(Bar *bar, BarArg *a) {
-  if (!selmon->sel)
-    return 0;
-
-  return TEXTW(selmon->sel->name);
-}
-*/
-
 static const BarRule barrules[] = {
-    /* monitor   bar    alignment         widthfunc          drawfunc
-       clickfunc          name */
+    /* monitor   bar    alignment         widthfunc                drawfunc
+       clickfunc                name */
     {-1, 0, BAR_ALIGN_LEFT, width_ltsymbol, draw_ltsymbol, click_ltsymbol,
      "layout"},
     {-1, 0, BAR_ALIGN_LEFT, width_tags, draw_tags, click_tags, "tags"},
@@ -194,7 +184,7 @@ static const BarRule barrules[] = {
      "systray"},
     {statusmon, 0, BAR_ALIGN_RIGHT, width_status2d, draw_status2d,
      click_status2d, "status2d"},
-    {-1, 0, BAR_ALIGN_CENTER, width_wintitle, draw_wintitle, click_wintitle,
+    {-1, 0, BAR_ALIGN_NONE, width_wintitle, draw_wintitle, click_wintitle,
      "wintitle"},
 };
 
@@ -209,9 +199,9 @@ static const int lockfullscreen =
 static const Layout layouts[] = {
     /* symbol     arrange function */
     {"TILE", tile}, /* first entry is default */
-    {"MNCL", monocle}, {"CTRM", centeredmaster},
+    {"MNCL", monocle},
+    {"DWDL", dwindle},
     {"NULL", NULL}, /* no layout function means floating behavior */
-    {NULL, NULL},
 };
 
 /* key definitions */
@@ -237,7 +227,7 @@ static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
     "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
     "10",        "-W",  "2520",    "-p",  " RUN : ", NULL};
-static const char *termcmd[] = {"kitty", NULL};
+static const char *termcmd[] = {"st", NULL};
 
 static Key keys[] = {
     /* modifier                     key            function argument */
@@ -261,14 +251,12 @@ static Key keys[] = {
     {MODKEY, XK_q, killclient, {0}},
     {MODKEY | ShiftMask, XK_q, quit, {0}},
     {MODKEY | ControlMask | ShiftMask, XK_q, quit, {1}},
-    {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
-    {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
+    {MODKEY, XK_z, setlayout, {.v = &layouts[0]}},
+    {MODKEY, XK_t, setlayout, {.v = &layouts[1]}},
     {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
     {MODKEY, XK_n, setlayout, {.v = &layouts[3]}},
     {MODKEY, XK_space, togglefloating, {0}},
     {MODKEY | ShiftMask, XK_f, togglefullscreen, {0}},
-    {MODKEY, XK_comma, cyclelayout, {.i = -1}},
-    {MODKEY, XK_period, cyclelayout, {.i = +1}},
     {MODKEY, XK_w, spawn, SHCMD("firefox")},
     {MODKEY, XK_e, spawn, SHCMD("pcmanfm")},
     {MODKEY, XK_d, spawn, SHCMD("discord")},
@@ -282,11 +270,11 @@ static Key keys[] = {
     {0, XF86XK_AudioMute, spawn,
      SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
     {ControlMask | Mod1Mask, XK_l, spawn, SHCMD("slock")},
-    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("kitty -e lvim")},
-    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("kitty -e tuir")},
-    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("kitty -e ranger")},
-    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("kitty -e ncspot")},
-    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("kitty -e htop")},
+    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("st -e lvim")},
+    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("st -e tuir")},
+    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("st -e ranger")},
+    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("st -e ncspot")},
+    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("st -e htop")},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4)};
 
