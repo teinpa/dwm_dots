@@ -25,13 +25,11 @@
 | `Super + Shift + q` | quit dwm  |
 | `Super + Control + Shift + q` | restart dwm  |
 | `Super + t` | set layout to master and stack  |
-| `Super + f` | set layout to monocle  |
-| `Super + m` | set layout to centered master  |
+| `Super + m` | set layout to monocle  |
+| `Super + z` | set layout to fibonacci dwindle  |
 | `Super + n` | set layout to floating  |
 | `Super + Shift + f` | toggle fullscreen  |
 | `Super + Space` | toggle floating  |
-| `Super + ,` | cycle layout forward  |
-| `Super + .` | cycle layout backward  |
 | `Super + w` | launch firefox  |
 | `Super + e` | launch pcmanfm  |
 | `Super + d` | launch discord  |
