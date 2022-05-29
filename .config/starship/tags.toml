@@ -12,13 +12,13 @@ error_symbol = "[](red)"
 vicmd_symbol = "[](green)"
 
 [directory]
-format = "[ ](bg:#ddb6f2)[   $path]($style)[ ](bg:#1e1e2e fg:#302d41)"
-style = "bg:#302d41 fg:#ddb6f2"
+format = "[ ](bg:#87b0f9)[   $path]($style)[ ](bg:#1e1e2e fg:#43465a)"
+style = "bg:#43465a fg:#87b0f9"
 
 [git_branch]
-format = "[ ](bg:#f8bd96)[   $branch]($style)[ ](bg:#1e1e2e fg:#302d41)"
-style = "bg:#302d41 fg:#f8bd96"
+format = "[ ](bg:#f8bd96)[   $branch]($style)[ ](bg:#1e1e2e fg:#43465a)"
+style = "bg:#43465a fg:#f8bd96"
 
 [cmd_duration]
 min_time = 1
-format = "[](bg:#1e1e2e fg:#302d41)[  $duration ](fg:#f28fad bg:#302d41)[ ](bg:#f28fad)"
+format = "[](bg:#1e1e2e fg:#43465a)[  $duration ](fg:#f38ba8 bg:#43465a)[ ](bg:#f38ba8)"
