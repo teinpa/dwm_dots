@@ -4,7 +4,7 @@
 killall -9 dunst transmission-daemon
 
 # start picom
-picom --config /home/hooxoo/.config/picom.conf &
+# picom --config /home/hooxoo/.config/picom.conf &
 
 # monitor timeout
 xset s 1800 3600 3600 &
@@ -35,7 +35,7 @@ bash $HOME/.fehbg &
 transmission-daemon &
 
 # launch dwm status bar
-bash $HOME/.config/scripts/statusbar.sh &
+bash $HOME/.config/scripts/ctp_statusbar.sh &
 
 # start dwm
 exec dwm
