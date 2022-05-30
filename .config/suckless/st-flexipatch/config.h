@@ -123,7 +123,7 @@ static const char *colorname[] = {
     "#c6d0f5",
 
     /* 8 bright colors */
-    "#7b819d", "#f38fa8", "#a6e3a1", "#f9e2af", "#87b0f9", "#cba6f7", "#74c7ec",
+    "#7b819d", "#e78284", "#a6d189", "#e5c890", "#8caaee", "#ca9ee6", "#85c1dc",
     "#c6d0f5",
 
     [256] = "#c6d0f5", /* default foreground colour */
