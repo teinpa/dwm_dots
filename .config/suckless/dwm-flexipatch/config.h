@@ -34,45 +34,45 @@ static const char dmenufont[] = "CaskaydiaCove Nerd Font:size=9";
 
 static char c000000[] = "#000000"; // placeholder value
 
-static char normfgcolor[] = "#c9cbff";     // layout and statusbar char colors
+static char normfgcolor[] = "#b4befe";     // layout and statusbar char colors
 static char normbgcolor[] = "#1e1e2e";     //
 static char normbordercolor[] = "#1e1e2e"; // inactive border color
 static char normfloatcolor[] = "#1E1E2E";
 
-static char selfgcolor[] = "#c9cbff";
+static char selfgcolor[] = "#b4befe";
 static char selbgcolor[] = "#1E1E2E";
-static char selbordercolor[] = "#c9cbff";
+static char selbordercolor[] = "#b4befe";
 static char selfloatcolor[] = "#f5e0dc";
 
-static char titlenormfgcolor[] = "#c9cbff";
+static char titlenormfgcolor[] = "#b4befe";
 static char titlenormbgcolor[] = "#1E1E2E";
 static char titlenormbordercolor[] = "#1E1E2E";
-static char titlenormfloatcolor[] = "#c9cbff";
+static char titlenormfloatcolor[] = "#b4befe";
 
-static char titleselfgcolor[] = "#c9cbff";
+static char titleselfgcolor[] = "#b4befe";
 static char titleselbgcolor[] = "#1E1E2E";
 static char titleselbordercolor[] = "#1E1E2E";
-static char titleselfloatcolor[] = "#ddb6f2";
+static char titleselfloatcolor[] = "#cba6f7";
 
 static char tagsnormfgcolor[] = "#575268";
 static char tagsnormbgcolor[] = "#1e1e2e";
 static char tagsnormbordercolor[] = "#1e1e2e";
-static char tagsnormfloatcolor[] = "#c9cbff";
+static char tagsnormfloatcolor[] = "#b4befe";
 
-static char tagsselfgcolor[] = "#f28fad";
+static char tagsselfgcolor[] = "#f38ba8";
 static char tagsselbgcolor[] = "#1e1e2e";
 static char tagsselbordercolor[] = "#1e1e2e";
-static char tagsselfloatcolor[] = "#ddb6f2";
+static char tagsselfloatcolor[] = "#cba6f7";
 
-static char hidnormfgcolor[] = "#c9cBff";
-static char hidselfgcolor[] = "#ddb6f2";
+static char hidnormfgcolor[] = "#b4befe";
+static char hidselfgcolor[] = "#cba6f7";
 static char hidnormbgcolor[] = "#161320";
 static char hidselbgcolor[] = "#161320";
 
-static char urgfgcolor[] = "#f28fad";
+static char urgfgcolor[] = "#f38ba8";
 static char urgbgcolor[] = "#1e1e2e";
-static char urgbordercolor[] = "#f28fad";
-static char urgfloatcolor[] = "#f28fad";
+static char urgbordercolor[] = "#f38ba8";
+static char urgfloatcolor[] = "#f38ba8";
 
 static char *colors[][ColCount] = {
     /*                       fg                bg                border float
@@ -225,7 +225,7 @@ static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
-    "#d9e0ee",   "-sb", "#c9cbff", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
+    "#d9e0ee",   "-sb", "#b4befe", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
     "10",        "-W",  "2520",    "-p",  " RUN : ", NULL};
 static const char *termcmd[] = {"st", NULL};
 
