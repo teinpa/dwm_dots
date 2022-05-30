@@ -162,11 +162,7 @@ lvim.plugins = {
           })
         end,
     },
-    -- {"feline-nvim/feline.nvim"},
 }
--- require("feline").setup({
---   components = require('catppuccin.core.integrations.feline'),
--- })
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
