@@ -25,8 +25,8 @@
 | `Super + Shift + q` | quit dwm  |
 | `Super + Control + Shift + q` | restart dwm  |
 | `Super + t` | set layout to master and stack  |
-| `Super + m` | set layout to monocle  |
-| `Super + z` | set layout to fibonacci dwindle  |
+| `Super + f` | set layout to monocle  |
+| `Super + m` | set layout to centered master  |
 | `Super + n` | set layout to floating  |
 | `Super + Shift + f` | toggle fullscreen  |
 | `Super + Space` | toggle floating  |
