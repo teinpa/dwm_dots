@@ -1,4 +1,4 @@
-#!/bin/sh
+
 
 interval=0
 
@@ -131,7 +131,7 @@ spotify() {
         SEP1=" | "
         if [ "$STATUS" = "Playing" ]; then
             # STATUS="PLA"
-            printf "^c$lavender^ $ARTIST ^c$red^$TRACK"
+            printf "^c$mo_Lavender^ $ARTIST ^c$mo_Red$^$TRACK"
         # else
             # STATUS="PAU"
             # printf "^b$red^^c$black^ PAU ^b$black^^c$red^ $ARTIST - $TRACK "
@@ -175,7 +175,7 @@ weather() {
   temp=$(curl -s wttr.in/Seoul?format=%t | sed 's/+//g')
   cond=$(curl -s wttr.in/Seoul?format=%C)
 
-  printf "^c$lavender^ $cond ^c$red^$temp"
+  printf "^c$mo_Lavender^ $cond ^c$mo_Red^$temp"
   # printf "^c$red^ $temp"
 }
 
