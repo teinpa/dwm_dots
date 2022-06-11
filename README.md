@@ -25,16 +25,16 @@
 | `Super + Shift + q` | quit dwm  |
 | `Super + Control + Shift + q` | restart dwm  |
 | `Super + t` | set layout to master and stack  |
-| `Super + m` | set layout to monocle  |
-| `Super + z` | set layout to fibonacci dwindle  |
+| `Super + f` | set layout to monocle  |
 | `Super + n` | set layout to floating  |
 | `Super + Shift + f` | toggle fullscreen  |
 | `Super + Space` | toggle floating  |
 | `Super + w` | launch firefox  |
 | `Super + e` | launch pcmanfm  |
 | `Super + d` | launch discord  |
-| `Super + x` | launch power menu script  |
-| `Super + p` | launch screenshot menu script  |
+| `Super + x` | launch power dmenu script  |
+| `Super + p` | launch screenshot dmenu script  |
+| `Super + m` | launch playerctl dmenu script  |
 | `Calculator` | launch qalculator  |
 | `AudioRaiseVolume` | increase volume 5%  |
 | `AudioLowerVolume` | decrease volume 5%  |
