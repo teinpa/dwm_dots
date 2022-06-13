@@ -300,7 +300,7 @@
 
 [urgency_normal]
     background = "#1e1e2e"
-    foreground = "#d9e0ee"
+    foreground = "##c6d0f5"
     timeout = 3
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
@@ -308,7 +308,7 @@
 [urgency_critical]
     background = "#1e1e2e"
     foreground = "#d9e0ee"
-    frame_color = "#f8bd96"
+    frame_color = "##f38ba8"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
