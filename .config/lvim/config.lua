@@ -14,7 +14,8 @@ lvim.format_on_save = true
 lvim.colorscheme = "catppuccin"
 vim.opt.relativenumber = true
 vim.opt.laststatus = 3
-
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.cmd[[colorscheme catppuccin]]
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -167,7 +168,6 @@ lvim.plugins = {
 require("feline").setup({
   components = require('catppuccin.core.integrations.feline'),
 })
-
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
