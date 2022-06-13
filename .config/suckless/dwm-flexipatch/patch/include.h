@@ -24,7 +24,6 @@
 #include "vanitygaps.h"
 #include "zoomswap.h"
 /* Layouts */
-#include "layout_fibonacci.h"
 #include "layout_monocle.h"
 #include "layout_tile.h"
 

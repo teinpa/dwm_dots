@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx = 5; /* border pixel of windows */
-static const unsigned int snap = 32;    /* snap pixel */
+static const unsigned int snap = 5;     /* snap pixel */
 static const int swallowfloating =
     0; /* 1 means swallow floating windows by default */
 static const unsigned int gappih = 10; /* horiz inner gap between windows */
@@ -200,8 +200,7 @@ static const Layout layouts[] = {
     /* symbol     arrange function */
     {"TILE", tile}, /* first entry is default */
     {"MNCL", monocle},
-    {"DWDL", dwindle},
-    {"NULL", NULL}, /* no layout function means floating behavior */
+    {"FREE", NULL}, /* no layout function means floating behavior */
 };
 
 /* key definitions */
@@ -252,9 +251,8 @@ static Key keys[] = {
     {MODKEY | ShiftMask, XK_q, quit, {0}},
     {MODKEY | ControlMask | ShiftMask, XK_q, quit, {1}},
     {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
-    {MODKEY, XK_m, setlayout, {.v = &layouts[1]}},
-    {MODKEY, XK_z, setlayout, {.v = &layouts[2]}},
-    {MODKEY, XK_n, setlayout, {.v = &layouts[3]}},
+    {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
+    {MODKEY, XK_n, setlayout, {.v = &layouts[2]}},
     {MODKEY, XK_space, togglefloating, {0}},
     {MODKEY | ShiftMask, XK_f, togglefullscreen, {0}},
     {MODKEY, XK_w, spawn, SHCMD("firefox")},
@@ -262,6 +260,7 @@ static Key keys[] = {
     {MODKEY, XK_d, spawn, SHCMD("discord")},
     {MODKEY, XK_x, spawn, SHCMD("$HOME/.config/scripts/dmenu_power.sh")},
     {MODKEY, XK_p, spawn, SHCMD("$HOME/.config/scripts/dmenu_screenshot.sh")},
+    {MODKEY, XK_m, spawn, SHCMD("$HOME/.config/scripts/dmenu_music.sh")},
     {0, XF86XK_Calculator, spawn, SHCMD("st -e qalc")},
     {0, XF86XK_AudioRaiseVolume, spawn,
      SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},

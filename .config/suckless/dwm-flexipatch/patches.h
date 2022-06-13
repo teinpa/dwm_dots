@@ -1326,7 +1326,7 @@
 /* Fibonacci dwindle layout.
  * https://dwm.suckless.org/patches/fibonacci/
  */
-#define FIBONACCI_DWINDLE_LAYOUT 1
+#define FIBONACCI_DWINDLE_LAYOUT 0
 
 /* Fibonacci spiral layout.
  * https://dwm.suckless.org/patches/fibonacci/

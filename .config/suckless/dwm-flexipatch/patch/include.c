@@ -25,7 +25,6 @@
 #include "zoomswap.c"
 /* Layouts */
 #include "layout_facts.c"
-#include "layout_fibonacci.c"
 #include "layout_monocle.c"
 #include "layout_tile.c"
 
