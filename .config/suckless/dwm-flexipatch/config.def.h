@@ -8,9 +8,9 @@ static const int swallowfloating =
 static const unsigned int gappih = 20; /* horiz inner gap between windows */
 static const unsigned int gappiv = 20; /* vert inner gap between windows */
 static const unsigned int gappoh =
-    70; /* horiz outer gap between windows and screen edge */
+    50; /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov =
-    100; /* vert outer gap between windows and screen edge */
+    80; /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact =
     1; /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer
           gaps */
