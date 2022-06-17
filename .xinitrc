@@ -4,7 +4,7 @@
 killall -9 dunst transmission-daemon
 
 # start picom
-picom --config /home/hooxoo/.config/picom.conf &
+picom --config /home/hooxoo/.config/picom.conf --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 200 &
 
 # monitor timeout
 xset s 1800 3600 3600 &
