@@ -40,7 +40,7 @@
 | `AudioLowerVolume` | decrease volume 5%  |
 | `AudioMute` | toggle mute  |
 | `Control + Alt + l` | lockscreen with slock  |
-| `Control + Alt + n` | lunarvim  |
+| `Control + Alt + n` | astronvim  |
 | `Control + Alt + t` | tuir - terminal reddit client  |
 | `Control + Alt + r` | ranger - terminal file manager |
 | `Control + Alt + s` | ncspot - terminal spotify client |
