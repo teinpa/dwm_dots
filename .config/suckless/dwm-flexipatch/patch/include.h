@@ -8,7 +8,6 @@
 #include "bar_tags.h"
 #include "bar_wintitle.h"
 #include "bar_systray.h"
-#include "bar_wintitleactions.h"
 
 /* Other patches */
 #include "attachx.h"
@@ -18,12 +17,14 @@
 #include "pertag.h"
 #include "push.h"
 #include "restartsig.h"
+#include "seamless_restart.h"
 #include "swallow.h"
 #include "swapfocus.h"
 #include "togglefullscreen.h"
 #include "vanitygaps.h"
 #include "zoomswap.h"
 /* Layouts */
+#include "layout_centeredmaster.h"
 #include "layout_monocle.h"
 #include "layout_tile.h"
 

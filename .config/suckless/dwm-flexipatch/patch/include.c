@@ -8,7 +8,6 @@
 #include "bar_tags.c"
 #include "bar_wintitle.c"
 #include "bar_systray.c"
-#include "bar_wintitleactions.c"
 
 /* Other patches */
 #include "attachx.c"
@@ -23,8 +22,10 @@
 #include "togglefullscreen.c"
 #include "vanitygaps.c"
 #include "zoomswap.c"
+#include "seamless_restart.c"
 /* Layouts */
 #include "layout_facts.c"
+#include "layout_centeredmaster.c"
 #include "layout_monocle.c"
 #include "layout_tile.c"
 
