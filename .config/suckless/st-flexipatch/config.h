@@ -7,9 +7,11 @@
  */
 static char *font =
     "CaskaydiaCove Nerd Font:pixelsize=16:antialias=true:autohint=true";
+    // "Cascursive:style=Italic:pixelsize=18:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
     "JoyPixels:pixelsize=16:antialias=true:autohint=true",
+    // "Cascursive:style=Italic:pixelsize=16:antialias=true:autohint=true",
     "NanumBarunGothic:pixelsize=16:antialias=true:autohint=true",
 };
 
