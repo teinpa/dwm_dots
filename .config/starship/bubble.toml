@@ -11,9 +11,9 @@ error_symbol = "[](red)"
 vicmd_symbol = "[](green)"
 
 [directory]
-format = "[]($style)[  $path](bg:#ddb6f2 fg:#1e1e2e bold)[ ]($style)"
-style = "bg:#1e1e2e fg:#ddb6f2"
+format = "[]($style)[  $path](bg:#b4befe fg:#1e1e2e)[ ]($style)"
+style = "bg:#1e1e2e fg:#b4befe"
 
 [git_branch]
-format = "[]($style)[  $branch](bg:#f8bd96 fg:#1e1e2e bold)[ ]($style)"
-style = "bg:#1e1e2e fg:#f8bd96"
+format = "[]($style)[  $branch](bg:#f38ba8 fg:#1e1e2e)[ ]($style)"
+style = "bg:#1e1e2e fg:#f38ba8"
