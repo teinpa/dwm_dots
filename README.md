@@ -20,21 +20,20 @@
 | `Super + Control + Down` | decrease vertical window size  |
 | `Super + Control + 0` | reset window size  |
 | `Super + g` | switch position with current biggest window  |
-| `Super + Shift + i` | show/hide window  |
 | `Super + q` | close window  |
 | `Super + Shift + q` | quit dwm  |
 | `Super + Control + Shift + q` | restart dwm  |
 | `Super + t` | set layout to master and stack  |
 | `Super + f` | set layout to monocle  |
+| `Super + m` | set layout to centered master  |
 | `Super + n` | set layout to floating  |
 | `Super + Shift + f` | toggle fullscreen  |
 | `Super + Space` | toggle floating  |
 | `Super + w` | launch firefox  |
 | `Super + e` | launch pcmanfm  |
-| `Super + d` | launch discord  |
 | `Super + x` | launch power dmenu script  |
 | `Super + p` | launch screenshot dmenu script  |
-| `Super + m` | launch playerctl dmenu script  |
+| `Super + c` | launch playerctl dmenu script  |
 | `Calculator` | launch qalculator  |
 | `AudioRaiseVolume` | increase volume 5%  |
 | `AudioLowerVolume` | decrease volume 5%  |
