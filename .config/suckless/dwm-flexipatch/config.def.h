@@ -153,7 +153,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "st", .isterminal = 1)
+	RULE(.class = "kitty", .isterminal = 1)
 };
 
 
@@ -217,7 +217,7 @@ static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
     "#c6d0f5",   "-sb", "#b4befe", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
     "20",        "-W",  "2520",    "-p",  " RUN : ", NULL};
-static const char *termcmd[] = {"alacritty", NULL};
+static const char *termcmd[] = {"kitty", NULL};
 
 static Key keys[] = {
     /* modifier                     key            function argument */
@@ -260,11 +260,11 @@ static Key keys[] = {
     {0, XF86XK_AudioMute, spawn,
      SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
     {ControlMask | Mod1Mask, XK_l, spawn, SHCMD("slock")},
-    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("alacritty -e lvim")},
-    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("alacritty -e tuir")},
-    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("alacritty -e ranger")},
-    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("alacritty -e ncspot")},
-    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("alacritty -e htop")},
+    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("kitty -e lvim")},
+    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("kitty -e tuir")},
+    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("kitty -e ranger")},
+    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("kitty -e ncspot")},
+    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("kitty -e htop")},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4)};
 
