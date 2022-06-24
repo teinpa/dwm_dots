@@ -11,7 +11,7 @@ bindkey -v
 
 # autoload -U promptinit && promptinit
 # prompt pure
-export STARSHIP_CONFIG=~/.config/starship/tags.toml
+export STARSHIP_CONFIG=~/.config/starship/powerline.toml
 export FZF_DEFAULT_OPTS='--color=bg+:#313244,bg:#1E1E2E,spinner:#Fab387,hl:#F38ba8 --color=fg:#c6d0f5,header:#F38ba8,info:#cba6f7,pointer:#Fab387 --color=marker:#Fab387,fg+:#F2CDCD,prompt:#cba6f7,hl+:#F38ba8'
 
 autoload -Uz compinit
