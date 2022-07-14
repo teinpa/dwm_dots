@@ -2,36 +2,36 @@ Xcursor.theme: Catppuccin-Dark-Cursors
 Xcursor.size: 48
 
 *background: #1E1E2E
-*foreground: #D9E0EE
+*foreground: #CDD6F4
 
 ! Gray
-*color0: #6E6C7E
-*color8: #988BA2
+*color0: #313244
+*color8: #585B70
 
 ! Red
-*color1: #F28FAD
-*color9: #F28FAD
+*color1: #F38BA8
+*color9: #F38BA8
 
 ! Green
-*color2: #ABE9B3
-*color10: #ABE9B3
+*color2: #A6E3A1
+*color10: #A6E3A1
 
 ! Yellow
-*color3: #FAE3B0
-*color11:  #FAE3B0
+*color3: #F9E2AF
+*color11:  #F9E2AF
 
 ! Blue
-*color4: #96CDFB
-*color12: #96CDFB
+*color4: #B4BEFE
+*color12: #B4BEFE
 
-! Maguve
-*color5: #DDB6F2
-*color13: #DDB6F2
+! Magenta
+*color5: #CBA6F7
+*color13: #CBA6F7
 
 ! Pink
 *color6: #F5C2E7
 *color14: #F5C2E7
 
 ! Whites
-*color7: #C3BAC6
-*color15: #D9E0EE
+*color7: #A6ADC8
+*color15: #CDD6F4
