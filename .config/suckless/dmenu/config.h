@@ -4,18 +4,17 @@
 static int topbar = 1; /* -b  option; if 0, dmenu appears at bottom */
 
 /* -fn option overrides fonts[0]; default X11 font or font set */
-static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=11"};
-static const char *prompt =
-    NULL; /* -p  option; prompt to the left of input field */
+static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=10"};
+static const char *prompt = NULL; /* -p  option; prompt to the left of input field */
 
 static const char *colors[][2] = {
     /*               fg         bg       */
-    [SchemeNorm] = {"#c9cbff", "#1E1E2E"},
-    [SchemeSel] = {"#c9cbff", "#1E1E2E"},
+    [SchemeNorm] = {"#b4befe", "#1E1E2E"},
+    [SchemeSel] = {"#f38ba8", "#1E1E2E"},
     [SchemeOut] = {"#000000", "#00ffff"},
-    [SchemeBorder] = {"#1e1e2e", "#1e1e2e"},
-    [SchemeSelHighlight] = {"#1e1e2e", "#f2cdcd"},
-    [SchemeNormHighlight] = {"#f2cdcd", "#1e1e2e"},
+    [SchemeBorder] = {"#b4befe", "#1e1e2e"},
+    [SchemeSelHighlight] = {"#eba0ac", "#313244"},
+    [SchemeNormHighlight] = {"#fab387", "#1e1e2e"},
 };
 
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
@@ -28,4 +27,4 @@ static unsigned int lines = 0;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static unsigned int border_width = 3;
+static unsigned int border_width = 5;
