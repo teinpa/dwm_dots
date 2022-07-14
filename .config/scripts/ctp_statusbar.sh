@@ -114,7 +114,7 @@ ma_Surface1=#484c64
 ma_Surface0=#363a4f
 ma_Base=#24273a
 ma_Mantle=#1e2030
-ma_Crust=#18192
+ma_Crust=#181926
 
 # functions
 
@@ -131,7 +131,7 @@ spotify() {
         SEP1=" | "
         if [ "$STATUS" = "Playing" ]; then
             # STATUS="PLA"
-            printf "^c$mo_Lavender^ $ARTIST ^c$mo_Red$^$TRACK"
+            printf "^c$fr_Lavender^ $ARTIST ^c$fr_Red$^$TRACK"
         # else
             # STATUS="PAU"
             # printf "^b$red^^c$black^ PAU ^b$black^^c$red^ $ARTIST - $TRACK "
@@ -147,7 +147,7 @@ pkg_updates() {
 	# if [[ -z "$updates" ]]; then
 	# 	printf "^c$black^^b$yellow^ PKG ^d^ Fully Updated "
 	# else
-	printf "^c$mo_Lavender^ PKG ^c$mo_Red^$updates"
+	printf "^c$mo_Lavender^ Pkg ^c$mo_Red^$updates"
 	# fi
 }
 
@@ -158,9 +158,9 @@ get_volume(){
 
         if [ "${curStatus}" = 'Mute: yes' ]
         then
-            printf "^c$mo_Red^ VOL ^c$mo_Red^MUTED"
+            printf "^c$mo_Red^ Vol ^c$mo_Red^MUTED"
         else
-            printf "^c$mo_Lavender^ VOL ^c$mo_Red^$volume%"
+            printf "^c$mo_Lavender^ Vol ^c$mo_Red^$volume%"
         fi
 }
 
@@ -180,7 +180,8 @@ weather() {
 }
 
 clock() {
-  printf "^c$mo_Lavender^ $(date '+%a ' | sed 's/.*/\U&/')"
+  # printf "^c$mo_Lavender^ $(date '+%a ' | sed 's/.*/\U&/')"
+  printf "^c$mo_Lavender^ $(date '+%a ')"
 	printf "^c$mo_Red^$(date '+%I:%M%p')"
 }
 
