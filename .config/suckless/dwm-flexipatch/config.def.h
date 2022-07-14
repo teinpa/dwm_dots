@@ -4,31 +4,31 @@
 static const unsigned int borderpx       = 5;   /* border pixel of windows */
 static const unsigned int snap           = 5;  /* snap pixel */
 static const int swallowfloating         = 0;   /* 1 means swallow floating windows by default */
-static const unsigned int gappih         = 20;  /* horiz inner gap between windows */
-static const unsigned int gappiv         = 20;  /* vert inner gap between windows */
-static const unsigned int gappoh         = 20;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 20;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappih         = 10;  /* horiz inner gap between windows */
+static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
+static const unsigned int gappoh         = 10;  /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov         = 10;  /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
 static const int vertpad                 = 5;  /* vertical padding of bar */
-static const int sidepad                 = 20;  /* horizontal padding of bar */
+static const int sidepad                 = 10;  /* horizontal padding of bar */
 static const int focusonwheel            = 0;
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
 static const int statusmon               = 'A';
 static const unsigned int systrayspacing = 0;   /* systray spacing */
-static const int showsystray             = 1;   /* 0 means no systray */
+static const int showsystray             = 0;   /* 0 means no systray */
 
 /* Indicators: see patch/bar_indicators.h for options */
 static int tagindicatortype              = INDICATOR_BOTTOM_BAR;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_NONE;
 
-static const char *fonts[] = {"CaskaydiaCove Nerd Font:size=9",
+static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=10",
                               "IBM Plex Sans KR:size=9",
                               "JoyPixels:size=9"};
 
-static const char dmenufont[] = "CaskaydiaCove Nerd Font:size=9";
+static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=10";
 
 static char c000000[] = "#000000"; // placeholder value
 
@@ -153,7 +153,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "kitty", .isterminal = 1)
+	RULE(.class = "st", .isterminal = 1)
 };
 
 
@@ -189,10 +189,10 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "TILE",      tile },    /* first entry is default */
-	{ "MNCL",      monocle },
-	{ "CNTR",      centeredmaster },
-	{ "FREE",      NULL },    /* no layout function means floating behavior */
+	{ "Tile",      tile },    /* first entry is default */
+	{ "Mono",      monocle },
+	{ "Cntr",      centeredmaster },
+	{ "Free",      NULL },    /* no layout function means floating behavior */
 };
 
 
@@ -215,9 +215,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
-    "#c6d0f5",   "-sb", "#b4befe", "-sf", "#1E1E2E", "-Y",  "7",       "-X",
-    "20",        "-W",  "2520",    "-p",  " RUN : ", NULL};
-static const char *termcmd[] = {"kitty", NULL};
+    "#c6d0f5",   "-sb", "#b4befe", "-sf", "#1E1E2E", "-Y",  "6",       "-X",
+    "10",        "-W",  "2530",    "-p",  " RUN : ", NULL};
+static const char *termcmd[] = {"st", NULL};
 
 static Key keys[] = {
     /* modifier                     key            function argument */
@@ -254,17 +254,17 @@ static Key keys[] = {
     {MODKEY, XK_c, spawn, SHCMD("$HOME/.config/scripts/dmenu_music.sh")},
     {0, XF86XK_Calculator, spawn, SHCMD("st -e qalc")},
     {0, XF86XK_AudioRaiseVolume, spawn,
-     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},
+     SHCMD("volume.sh up")},
     {0, XF86XK_AudioLowerVolume, spawn,
-     SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%")},
+     SHCMD("volume.sh down")},
     {0, XF86XK_AudioMute, spawn,
-     SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
+     SHCMD("volume.sh mute")},
     {ControlMask | Mod1Mask, XK_l, spawn, SHCMD("slock")},
-    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("kitty -e lvim")},
-    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("kitty -e tuir")},
-    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("kitty -e ranger")},
-    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("kitty -e ncspot")},
-    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("kitty -e htop")},
+    {ControlMask | Mod1Mask, XK_n, spawn, SHCMD("st -e nvim")},
+    {ControlMask | Mod1Mask, XK_t, spawn, SHCMD("st -e tuir")},
+    {ControlMask | Mod1Mask, XK_r, spawn, SHCMD("st -e ranger")},
+    {ControlMask | Mod1Mask, XK_s, spawn, SHCMD("st -e ncspot")},
+    {ControlMask | Mod1Mask, XK_h, spawn, SHCMD("st -e htop")},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4)};
 
