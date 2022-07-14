@@ -1,6 +1,10 @@
 slim_path=`dirname $0`
 fpath=( $slim_path $fpath )
 
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # export PATH=~/.local/bin:$PATH
 
 HISTFILE=$slim_path/.HISTFILE
@@ -11,7 +15,12 @@ bindkey -v
 
 # autoload -U promptinit && promptinit
 # prompt pure
-export STARSHIP_CONFIG=~/.config/starship/powerline.toml
+# autoload -U colors && colors
+
+# setopt promptsubst
+
+# export STARSHIP_CONFIG=~/.config/starship/bubble.toml
+
 export FZF_DEFAULT_OPTS='--color=bg+:#313244,bg:#1E1E2E,spinner:#Fab387,hl:#F38ba8 --color=fg:#c6d0f5,header:#F38ba8,info:#cba6f7,pointer:#Fab387 --color=marker:#Fab387,fg+:#F2CDCD,prompt:#cba6f7,hl+:#F38ba8'
 
 autoload -Uz compinit
@@ -33,6 +42,7 @@ source $slim_path/correction.zsh
 source $slim_path/sudo.plugin.zsh
 source $slim_path/stack.zsh
 source $slim_path/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $slim_path/powerlevel10k/powerlevel10k.zsh-theme
 
-eval "$(starship init zsh)"
-
+# eval "$(starship init zsh)"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
