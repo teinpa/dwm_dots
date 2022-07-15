@@ -1,6 +1,7 @@
 /* Bar functionality */
 #include "bar_indicators.h"
 #include "bar_tagicons.h"
+#include "bar.h"
 
 #include "bar_ltsymbol.h"
 #include "bar_status.h"
@@ -20,7 +21,6 @@
 #include "seamless_restart.h"
 #include "swallow.h"
 #include "swapfocus.h"
-#include "togglefullscreen.h"
 #include "vanitygaps.h"
 #include "zoomswap.h"
 /* Layouts */

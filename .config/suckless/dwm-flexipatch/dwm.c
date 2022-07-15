@@ -176,6 +176,7 @@ typedef struct {
 	int (*widthfunc)(Bar *bar, BarArg *a);
 	int (*drawfunc)(Bar *bar, BarArg *a);
 	int (*clickfunc)(Bar *bar, Arg *arg, BarArg *a);
+	int (*hoverfunc)(Bar *bar, BarArg *a, XMotionEvent *ev);
 	char *name; // for debugging
 	int x, w; // position, width for internal use
 } BarRule;
@@ -644,9 +645,14 @@ checkotherwm(void)
 void
 cleanup(void)
 {
-	Layout foo = { "", NULL };
 	Monitor *m;
+	Layout foo = { "", NULL };
 	size_t i;
+
+	for (m = mons; m; m = m->next)
+		persistmonitorstate(m);
+
+
 	selmon->lt[selmon->sellt] = &foo;
 	for (m = mons; m; m = m->next)
 		while (m->stack)
@@ -1645,12 +1651,7 @@ void
 quit(const Arg *arg)
 {
 	restart = arg->i;
-	Monitor *m;
 	running = 0;
-
-	for (m = mons; m && !running; m = m->next)
-		persistmonitorstate(m);
-
 }
 
 Monitor *
@@ -2098,8 +2099,6 @@ sigchld(int unused)
 void
 spawn(const Arg *arg)
 {
-	if (arg->v == dmenucmd)
-		dmenumon[0] = '0' + selmon->num;
 
 	if (fork() == 0)
 	{
@@ -2127,6 +2126,8 @@ tag(const Arg *arg)
 			if (tagmask & 1)
 				selmon->pertag->prevclient[tagindex] = NULL;
 		arrange(selmon);
+		if ((arg->ui & TAGMASK) != selmon->tagset[selmon->seltags])
+			view(arg);
 	}
 }
 

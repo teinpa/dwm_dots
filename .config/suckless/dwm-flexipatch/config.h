@@ -17,20 +17,21 @@ static const int focusonwheel            = 0;
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
 static const int statusmon               = 'A';
 static const unsigned int systrayspacing = 0;   /* systray spacing */
-static const int showsystray             = 0;   /* 0 means no systray */
+static const int showsystray             = 1;   /* 0 means no systray */
 
 /* Indicators: see patch/bar_indicators.h for options */
-static int tagindicatortype              = INDICATOR_BOTTOM_BAR;
+static int tagindicatortype              = INDICATOR_NONE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_NONE;
 
-static const char *fonts[] = {"FantasqueSansMono Nerd Font:size=10",
+static const char *fonts[] = {//"FantasqueSansMono Nerd Font:size=10",
+                              "Cascursive:style=Italic:size=8",
                               "IBM Plex Sans KR:size=9",
                               "JoyPixels:size=9"};
 
-static const char dmenufont[] = "FantasqueSansMono Nerd Font:size=10";
+static const char dmenufont[] = "Cascursive:style=Italic:size=8";
 
-static char c000000[] = "#000000"; // placeholder value
+static char c000000[]                    = "#000000"; // placeholder value
 
 static char normfgcolor[] = "#b4befe";     // layout and statusbar char colors
 static char normbgcolor[] = "#1e1e2e";     //
@@ -71,7 +72,6 @@ static char urgfgcolor[] = "#f38ba8";
 static char urgbgcolor[] = "#1e1e2e";
 static char urgbordercolor[] = "#f38ba8";
 static char urgfloatcolor[] = "#f38ba8";
-
 
 static char *colors[][ColCount] = {
 	/*                       fg                bg                border                float */
@@ -118,9 +118,9 @@ static char *colors[][ColCount] = {
  * them. This works seamlessly with alternative tags and alttagsdecoration patches.
  */
 static char *tagicons[][NUMTAGS] = {
-	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5"},
-	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E"},
-	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>"},
+	[DEFAULT_TAGS]        = { "", "", "", "", "" },
+	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E" },
+	[ALT_TAGS_DECORATION] = { "", "", "", "", "" },
 };
 
 
@@ -171,12 +171,12 @@ static const Rule rules[] = {
  *    name - does nothing, intended for visual clue and for logging / debugging
  */
 static const BarRule barrules[] = {
-	/* monitor   bar    alignment         widthfunc                drawfunc                clickfunc                name */
-	{ -1,        0,     BAR_ALIGN_LEFT,   width_ltsymbol,          draw_ltsymbol,          click_ltsymbol,          "layout" },
-	{ -1,        0,     BAR_ALIGN_LEFT,   width_tags,              draw_tags,              click_tags,              "tags" },
-	{  0,        0,     BAR_ALIGN_RIGHT,  width_systray,           draw_systray,           click_systray,           "systray" },
-	{ statusmon, 0,     BAR_ALIGN_RIGHT,  width_status2d,          draw_status2d,          click_status2d,          "status2d" },
-	{ -1,        0,     BAR_ALIGN_NONE,   width_wintitle,          draw_wintitle,          click_wintitle,          "wintitle" },
+	/* monitor   bar    alignment         widthfunc                 drawfunc                clickfunc                hoverfunc                name */
+	{ -1,        0,     BAR_ALIGN_LEFT,   width_ltsymbol,           draw_ltsymbol,          click_ltsymbol,          NULL,                    "layout" },
+	{ -1,        0,     BAR_ALIGN_LEFT,   width_tags,               draw_tags,              click_tags,              hover_tags,              "tags" },
+	{  0,        0,     BAR_ALIGN_RIGHT,  width_systray,            draw_systray,           click_systray,           NULL,                    "systray" },
+	{ statusmon, 0,     BAR_ALIGN_RIGHT,  width_status2d,           draw_status2d,          click_status2d,          NULL,                    "status2d" },
+	{ -1,        0,     BAR_ALIGN_NONE,   width_wintitle,           draw_wintitle,          click_wintitle,          NULL,                    "wintitle" },
 };
 
 /* layout(s) */
@@ -190,7 +190,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "Tile",      tile },    /* first entry is default */
-	{ "Mono",      monocle },
+	{ "Mncl",      monocle },
 	{ "Cntr",      centeredmaster },
 	{ "Free",      NULL },    /* no layout function means floating behavior */
 };
@@ -209,15 +209,15 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-#include <X11/XF86keysym.h>
-
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
-    "dmenu_run", "-m",  dmenumon,  "-fn", dmenufont, "-nb", "#1e1e2e", "-nf",
+    "dmenu_run", "-m",  dmenufont, "-nb", "#1e1e2e", "-nf",
     "#c6d0f5",   "-sb", "#b4befe", "-sf", "#1E1E2E", "-Y",  "6",       "-X",
     "10",        "-W",  "2530",    "-p",  " RUN : ", NULL};
-static const char *termcmd[] = {"st", NULL};
+
+static const char *termcmd[]  = { "st", NULL };
+
+#include <X11/XF86keysym.h>
 
 static Key keys[] = {
     /* modifier                     key            function argument */
@@ -245,7 +245,7 @@ static Key keys[] = {
     {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
     {MODKEY, XK_n, setlayout, {.v = &layouts[3]}},
     {MODKEY, XK_space, togglefloating, {0}},
-    {MODKEY | ShiftMask, XK_f, togglefullscreen, {0}},
+    // {MODKEY | ShiftMask, XK_f, togglefullscreen, {0}},
     {MODKEY, XK_w, spawn, SHCMD("firefox")},
     {MODKEY, XK_e, spawn, SHCMD("pcmanfm")},
     {MODKEY, XK_d, spawn, SHCMD("discord")},
@@ -284,6 +284,5 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
 };
-
 
 

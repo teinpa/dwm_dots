@@ -1,6 +1,7 @@
 /* Bar functionality */
 #include "bar_indicators.c"
 #include "bar_tagicons.c"
+#include "bar.c"
 
 #include "bar_ltsymbol.c"
 #include "bar_status.c"
@@ -19,7 +20,6 @@
 #include "restartsig.c"
 #include "swallow.c"
 #include "swapfocus.c"
-#include "togglefullscreen.c"
 #include "vanitygaps.c"
 #include "zoomswap.c"
 #include "seamless_restart.c"
