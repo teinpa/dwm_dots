@@ -1,7 +1,7 @@
 # dwm_dots  
 
 ## screenshot  
-![Screenshot](/Pictures/screenshots/desktop.png)  
+![Screenshot](/Pictures/screenshots/desktop1.png)  
 
 ## keybindings  
 | Key-binding | Action  |
