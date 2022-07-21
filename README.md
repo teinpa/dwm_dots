@@ -18,7 +18,6 @@
 | `Super + Control + Right` | increase horizontal window size  |
 | `Super + Control + Up`  | increase vertical window size  |
 | `Super + Control + Down` | decrease vertical window size  |
-| `Super + Control + 0` | reset window size  |
 | `Super + g` | switch position with current biggest window  |
 | `Super + q` | close window  |
 | `Super + Shift + q` | quit dwm  |
@@ -29,15 +28,13 @@
 | `Super + n` | set layout to floating  |
 | `Super + Shift + f` | toggle fullscreen  |
 | `Super + Space` | toggle floating  |
-| `Super + w` | launch firefox  |
+| `Super + w` | launch brave  |
 | `Super + e` | launch pcmanfm  |
 | `Super + x` | launch power dmenu script  |
 | `Super + p` | launch screenshot dmenu script  |
 | `Super + c` | launch playerctl dmenu script  |
-| `Calculator` | launch qalculator  |
 | `AudioRaiseVolume` | increase volume 5%  |
 | `AudioLowerVolume` | decrease volume 5%  |
-| `AudioMute` | toggle mute  |
 | `Control + Alt + l` | lockscreen with slock  |
 | `Control + Alt + n` | astronvim  |
 | `Control + Alt + t` | tuir - terminal reddit client  |
