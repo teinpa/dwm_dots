@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font =
-    "FantasqueSansMono Nerd Font:pixelsize=18:antialias=true:autohint=true";
+    "Ellograph Mono:pixelsize=15:antialias=true:autohint=true";
     // "Cascursive:style=Italic:pixelsize=18:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
@@ -121,28 +121,28 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#45475A",
-	"#F38BA8",
-	"#A6E3A1",
-	"#F9E2AF",
-	"#89B4FA",
-	"#F5C2E7",
-	"#94E2D5",
-	"#BAC2DE",
+	"#414868",
+	"#f7768e",
+	"#73daca",
+	"#e0af68",
+	"#7aa2f7",
+	"#bb9af7",
+	"#7dcfff",
+	"#c0caf5",
 
 	/* 8 bright colors */
-	"#585B70",
-	"#F38BA8",
-	"#A6E3A1",
-	"#F9E2AF",
-	"#89B4FA",
-	"#F5C2E7",
-	"#94E2D5",
-	"#A6ADC8",
+	"#414868",
+	"#f7768e",
+	"#73daca",
+	"#e0af68",
+	"#7aa2f7",
+	"#bb9af7",
+	"#7dcfff",
+	"#c0caf5",
 
-[256] = "#CDD6F4", /* default foreground colour */
-[257] = "#1E1E2E", /* default background colour */
-[258] = "#F5E0DC", /*575268*/
+[256] = "#a9b1d6", /* default foreground colour */
+[257] = "#1a1b26", /* default background colour */
+[258] = "#9aa5ce", /*575268*/
 
 };
 
