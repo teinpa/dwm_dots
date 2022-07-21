@@ -4,10 +4,10 @@
 static const unsigned int borderpx       = 5;   /* border pixel of windows */
 static const unsigned int snap           = 5;  /* snap pixel */
 static const int swallowfloating         = 0;   /* 1 means swallow floating windows by default */
-static const unsigned int gappih         = 10;  /* horiz inner gap between windows */
-static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
-static const unsigned int gappoh         = 10;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 10;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappih         = 20;  /* horiz inner gap between windows */
+static const unsigned int gappiv         = 20;  /* vert inner gap between windows */
+static const unsigned int gappoh         = 20;  /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov         = 20;  /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
@@ -25,53 +25,53 @@ static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_NONE;
 
 static const char *fonts[] = {//"FantasqueSansMono Nerd Font:size=10",
-                              "Cascursive:style=Italic:size=8",
-                              "IBM Plex Sans KR:size=9",
-                              "JoyPixels:size=9"};
+                              "Ellograph Mono:style:Bold:size=8",
+                              "IBM Plex Sans KR:size=8",
+                              "JoyPixels:size=8"};
 
 static const char dmenufont[] = "Cascursive:style=Italic:size=8";
 
-static char c000000[]                    = "#000000"; // placeholder value
+// static char c000000[]                    = "#000000"; // placeholder value
 
-static char normfgcolor[] = "#b4befe";     // layout and statusbar char colors
-static char normbgcolor[] = "#1e1e2e";     //
-static char normbordercolor[] = "#1e1e2e"; // inactive border color
-static char normfloatcolor[] = "#1E1E2E";
+static char normfgcolor[] = "#bb9af7";     // layout and statusbar char colors
+static char normbgcolor[] = "#1a1b26";     //
+static char normbordercolor[] = "#1a1b26"; // inactive border color
+static char normfloatcolor[] = "#1a1b26";
 
-static char selfgcolor[] = "#b4befe";
-static char selbgcolor[] = "#1E1E2E";
-static char selbordercolor[] = "#b4befe";
-static char selfloatcolor[] = "#f5e0dc";
+static char selfgcolor[] = "#bb9af7";
+static char selbgcolor[] = "#1a1b26";
+static char selbordercolor[] = "#bb9af7";
+static char selfloatcolor[] = "#bb9af7";
 
-static char titlenormfgcolor[] = "#b4befe";
-static char titlenormbgcolor[] = "#1E1E2E";
-static char titlenormbordercolor[] = "#1E1E2E";
-static char titlenormfloatcolor[] = "#b4befe";
+static char titlenormfgcolor[] = "#bb9af7";
+static char titlenormbgcolor[] = "#1a1b26";
+static char titlenormbordercolor[] = "#414868";
+static char titlenormfloatcolor[] = "#bb9af7";
 
-static char titleselfgcolor[] = "#b4befe";
-static char titleselbgcolor[] = "#1E1E2E";
-static char titleselbordercolor[] = "#1E1E2E";
-static char titleselfloatcolor[] = "#cba6f7";
+static char titleselfgcolor[] = "#bb9af7";
+static char titleselbgcolor[] = "#1a1b26";
+static char titleselbordercolor[] = "#1a1b26";
+static char titleselfloatcolor[] = "#bb9af7";
 
-static char tagsnormfgcolor[] = "#575268";
-static char tagsnormbgcolor[] = "#1e1e2e";
-static char tagsnormbordercolor[] = "#1e1e2e";
-static char tagsnormfloatcolor[] = "#b4befe";
+static char tagsnormfgcolor[] = "#414868";
+static char tagsnormbgcolor[] = "#1a1b26";
+static char tagsnormbordercolor[] = "#1a1b26";
+static char tagsnormfloatcolor[] = "#bb9af7";
 
-static char tagsselfgcolor[] = "#f38ba8";
-static char tagsselbgcolor[] = "#1e1e2e";
-static char tagsselbordercolor[] = "#1e1e2e";
-static char tagsselfloatcolor[] = "#cba6f7";
+static char tagsselfgcolor[] = "#e0af68";
+static char tagsselbgcolor[] = "#1a1b26";
+static char tagsselbordercolor[] = "#1a1b26";
+static char tagsselfloatcolor[] = "#bb9af7";
 
-static char hidnormfgcolor[] = "#b4befe";
-static char hidselfgcolor[] = "#cba6f7";
-static char hidnormbgcolor[] = "#161320";
-static char hidselbgcolor[] = "#161320";
-
-static char urgfgcolor[] = "#f38ba8";
-static char urgbgcolor[] = "#1e1e2e";
-static char urgbordercolor[] = "#f38ba8";
-static char urgfloatcolor[] = "#f38ba8";
+// static char hidnormfgcolor[] = "#bb9af7";
+// static char hidselfgcolor[] = "#bb9af7";
+// static char hidnormbgcolor[] = "#1c252c";
+// static char hidselbgcolor[] = "#1c252c";
+//
+// static char urgfgcolor[] = "#fc17b81";
+// static char urgbgcolor[] = "#1a1b26";
+// static char urgbordercolor[] = "#fc7b81";
+// static char urgfloatcolor[] = "#fc7b81";
 
 static char *colors[][ColCount] = {
 	/*                       fg                bg                border                float */
@@ -81,9 +81,9 @@ static char *colors[][ColCount] = {
 	[SchemeTitleSel]     = { titleselfgcolor,  titleselbgcolor,  titleselbordercolor,  titleselfloatcolor },
 	[SchemeTagsNorm]     = { tagsnormfgcolor,  tagsnormbgcolor,  tagsnormbordercolor,  tagsnormfloatcolor },
 	[SchemeTagsSel]      = { tagsselfgcolor,   tagsselbgcolor,   tagsselbordercolor,   tagsselfloatcolor },
-	[SchemeHidNorm]      = { hidnormfgcolor,   hidnormbgcolor,   c000000,              c000000 },
-	[SchemeHidSel]       = { hidselfgcolor,    hidselbgcolor,    c000000,              c000000 },
-	[SchemeUrg]          = { urgfgcolor,       urgbgcolor,       urgbordercolor,       urgfloatcolor },
+	// [SchemeHidNorm]      = { hidnormfgcolor,   hidnormbgcolor,   c000000,              c000000 },
+	// [SchemeHidSel]       = { hidselfgcolor,    hidselbgcolor,    c000000,              c000000 },
+	// [SchemeUrg]          = { urgfgcolor,       urgbgcolor,       urgbordercolor,       urgfloatcolor },
 };
 
 
@@ -189,10 +189,10 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "Tile",      tile },    /* first entry is default */
-	{ "Mncl",      monocle },
-	{ "Cntr",      centeredmaster },
-	{ "Free",      NULL },    /* no layout function means floating behavior */
+	{ "TILE",      tile },    /* first entry is default */
+	{ "MNCL",      monocle },
+	{ "CNTR",      centeredmaster },
+	{ "NULL",      NULL },    /* no layout function means floating behavior */
 };
 
 
@@ -211,8 +211,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = {
-    "dmenu_run", "-m",  dmenufont, "-nb", "#1e1e2e", "-nf",
-    "#c6d0f5",   "-sb", "#b4befe", "-sf", "#1E1E2E", "-Y",  "6",       "-X",
+    "dmenu_run", "-m",  dmenufont, "-nb", "#1a1b26", "-nf",
+    "#c0caf5",   "-sb", "#bb9af7", "-sf", "#1a1b26", "-Y",  "6",       "-X",
     "10",        "-W",  "2530",    "-p",  " RUN : ", NULL};
 
 static const char *termcmd[]  = { "st", NULL };
@@ -245,8 +245,8 @@ static Key keys[] = {
     {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
     {MODKEY, XK_n, setlayout, {.v = &layouts[3]}},
     {MODKEY, XK_space, togglefloating, {0}},
-    // {MODKEY | ShiftMask, XK_f, togglefullscreen, {0}},
-    {MODKEY, XK_w, spawn, SHCMD("firefox")},
+    {MODKEY | ShiftMask, XK_f, togglefullscreen, {0}},
+    {MODKEY, XK_w, spawn, SHCMD("brave")},
     {MODKEY, XK_e, spawn, SHCMD("pcmanfm")},
     {MODKEY, XK_d, spawn, SHCMD("discord")},
     {MODKEY, XK_x, spawn, SHCMD("$HOME/.config/scripts/dmenu_power.sh")},

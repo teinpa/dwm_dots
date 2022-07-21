@@ -116,6 +116,20 @@ ma_Base=#24273a
 ma_Mantle=#1e2030
 ma_Crust=#181926
 
+#decay
+d_background=#1a1b26
+d_foreground=#a9b1d6
+d_black=#414868
+d_red=#f7768e
+d_green=#73daca
+d_green1=#9ece6a
+d_yellow=#e0af68
+d_blue=#7aa2f7
+d_magenta=#bb9af7
+d_cyan=#7dcfff
+d_lightgrey=#cfc9c2
+d_white=#c0caf5
+
 # functions
 
 spotify() {
@@ -131,7 +145,7 @@ spotify() {
         SEP1=" | "
         if [ "$STATUS" = "Playing" ]; then
             # STATUS="PLA"
-            printf "^c$fr_Lavender^ $ARTIST ^c$fr_Red$^$TRACK"
+            printf "^c$d_magenta^ $ARTIST ^c$d_white$^$TRACK "
         # else
             # STATUS="PAU"
             # printf "^b$red^^c$black^ PAU ^b$black^^c$red^ $ARTIST - $TRACK "
@@ -147,7 +161,7 @@ pkg_updates() {
 	# if [[ -z "$updates" ]]; then
 	# 	printf "^c$black^^b$yellow^ PKG ^d^ Fully Updated "
 	# else
-	printf "^c$mo_Lavender^ Pkg ^c$mo_Red^$updates"
+	printf "^c$d_yellow^ PKG ^c$d_white^$updates"
 	# fi
 }
 
@@ -158,9 +172,9 @@ get_volume(){
 
         if [ "${curStatus}" = 'Mute: yes' ]
         then
-            printf "^c$mo_Red^ Vol ^c$mo_Red^MUTED"
+            printf "^c$d_red^ VOL ^c$d_red^MUTED"
         else
-            printf "^c$mo_Lavender^ Vol ^c$mo_Red^$volume%"
+            printf "^c$d_green1^ VOL ^c$d_white^$volume%"
         fi
 }
 
@@ -180,17 +194,24 @@ weather() {
 }
 
 clock() {
-  # printf "^c$mo_Lavender^ $(date '+%a ' | sed 's/.*/\U&/')"
+  printf "^c$d_red^ $(date '+%a ' | sed 's/.*/\U&/')"
   # printf "^c$mo_Lavender^$(date '+%b.%d ')"
-  printf "^c$mo_Lavender^ $(date '+%a ')"
-  printf "^c$mo_Red^$(date '+%I:%M%p')"
+  # printf "^c$mo_Red^ $(date '+%a ')"
+  printf "^c$d_white^$(date '+%I:%M%p')"
 }
 
+# date() {
+#   printf "^c$d_magenta^ $(date '+%b ' | sed 's/.*/\U&/')"
+#   # printf "^c$mo_Lavender^$(date '+%b.%d ')"
+#   # printf "^c$mo_Red^ $(date '+%a ')"
+#   printf "^c$d_white^$(date '+%d')"
+# }
+#
 while true; do
 
 	[ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
 	interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(spotify) $(pkg_updates) $(get_volume) $(clock)"
+  sleep 1 && xsetroot -name "$(spotify)$(pkg_updates) $(get_volume) $(clock)"
 done
 

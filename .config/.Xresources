@@ -1,37 +1,38 @@
-Xcursor.theme: Catppuccin-Dark-Cursors
-Xcursor.size: 48
+Xcursor.theme: oreo_spark_orange_cursors
+Xcursor.size: 32
 
-*background: #1E1E2E
-*foreground: #CDD6F4
+*foreground #a9b1d6
+*background #1a1b26
 
-! Gray
-*color0: #313244
-*color8: #585B70
+# Black
+color0 #414868
+color8 #414868
 
-! Red
-*color1: #F38BA8
-*color9: #F38BA8
+# Red
+color1 #f7768e
+color9 #f7768e
 
-! Green
-*color2: #A6E3A1
-*color10: #A6E3A1
+# Green
+color2  #73daca
+color10 #73daca
 
-! Yellow
-*color3: #F9E2AF
-*color11:  #F9E2AF
+# Yellow
+color3  #e0af68
+color11 #e0af68
 
-! Blue
-*color4: #B4BEFE
-*color12: #B4BEFE
+# Blue
+color4  #7aa2f7
+color12 #7aa2f7
 
-! Magenta
-*color5: #CBA6F7
-*color13: #CBA6F7
+# Magenta
+color5  #bb9af7
+color13 #bb9af7
 
-! Pink
-*color6: #F5C2E7
-*color14: #F5C2E7
+# Cyan
+color6  #7dcfff
+color14 #7dcfff
 
-! Whites
-*color7: #A6ADC8
-*color15: #CDD6F4
+# White
+color7  #c0caf5
+color15 #c0caf5
+
