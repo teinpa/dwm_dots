@@ -21,7 +21,7 @@ bindkey -v
 
 # export STARSHIP_CONFIG=~/.config/starship/bubble.toml
 
-export FZF_DEFAULT_OPTS='--color=bg+:#313244,bg:#1E1E2E,spinner:#Fab387,hl:#F38ba8 --color=fg:#c6d0f5,header:#F38ba8,info:#cba6f7,pointer:#Fab387 --color=marker:#Fab387,fg+:#F2CDCD,prompt:#cba6f7,hl+:#F38ba8'
+export FZF_DEFAULT_OPTS='--color=bg+:#414868,bg:#1a1b26,spinner:#ff9e64,hl:#f7768e --color=fg:#c0caf5,header:#f7768e,info:#bb9af7,pointer:#ff9e64 --color=marker:#ff9e64,fg+:#cfc9c2,prompt:#bb9af7,hl+:#f7768e'
 
 autoload -Uz compinit
 compinit -C
@@ -44,5 +44,7 @@ source $slim_path/stack.zsh
 source $slim_path/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source $slim_path/powerlevel10k/powerlevel10k.zsh-theme
 
+
 # eval "$(starship init zsh)"
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f $slim_path/.p10k.zsh ]] || source $slim_path/.p10k.zsh
+
