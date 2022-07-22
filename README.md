@@ -28,13 +28,14 @@
 | `Super + n` | set layout to floating  |
 | `Super + Shift + f` | toggle fullscreen  |
 | `Super + Space` | toggle floating  |
-| `Super + w` | launch brave  |
+| `Super + w` | launch web browser  |
 | `Super + e` | launch pcmanfm  |
 | `Super + x` | launch power dmenu script  |
 | `Super + p` | launch screenshot dmenu script  |
 | `Super + c` | launch playerctl dmenu script  |
 | `AudioRaiseVolume` | increase volume 5%  |
 | `AudioLowerVolume` | decrease volume 5%  |
+| `AudioMute` | mute/unmute volume  |
 | `Control + Alt + l` | lockscreen with slock  |
 | `Control + Alt + n` | astronvim  |
 | `Control + Alt + t` | tuir - terminal reddit client  |

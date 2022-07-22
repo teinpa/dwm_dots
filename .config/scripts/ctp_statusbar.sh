@@ -116,7 +116,7 @@ ma_Base=#24273a
 ma_Mantle=#1e2030
 ma_Crust=#181926
 
-#decay
+#tokyo
 d_background=#1a1b26
 d_foreground=#a9b1d6
 d_black=#414868
@@ -145,7 +145,7 @@ spotify() {
         SEP1=" | "
         if [ "$STATUS" = "Playing" ]; then
             # STATUS="PLA"
-            printf "^c$d_magenta^ $ARTIST ^c$d_white$^$TRACK "
+            printf "^c$d_magenta^ $ARTIST ^c$d_white$^$TRACK ^c$d_black^"
         # else
             # STATUS="PAU"
             # printf "^b$red^^c$black^ PAU ^b$black^^c$red^ $ARTIST - $TRACK "
@@ -161,7 +161,7 @@ pkg_updates() {
 	# if [[ -z "$updates" ]]; then
 	# 	printf "^c$black^^b$yellow^ PKG ^d^ Fully Updated "
 	# else
-	printf "^c$d_yellow^ PKG ^c$d_white^$updates"
+	printf "^c$d_yellow^ PKG ^c$d_white^$updates^c$d_black^"
 	# fi
 }
 
@@ -172,9 +172,9 @@ get_volume(){
 
         if [ "${curStatus}" = 'Mute: yes' ]
         then
-            printf "^c$d_red^ VOL ^c$d_red^MUTED"
+            printf "^c$d_red^ VOL ^c$d_red^MUTED^c$d_black^"
         else
-            printf "^c$d_green1^ VOL ^c$d_white^$volume%"
+            printf "^c$d_green1^ VOL ^c$d_white^$volume%^c$d_black^"
         fi
 }
 
@@ -186,32 +186,30 @@ mem() {
 }
 
 weather() {
-  temp=$(curl -s wttr.in/Seoul?format=%t | sed 's/+//g')
-  cond=$(curl -s wttr.in/Seoul?format=%C)
+  # temp=$(curl -s wttr.in/Seoul?format=%t | awk '{ print toupper($0) }')
+  temp=$(curl -s wttr.in/Seoul?format=%t)
+  cond=$(curl -s wttr.in/Seoul?format=%C | awk '{ print toupper($0) }')
 
-  printf "^c$mo_Lavender^ $cond ^c$mo_Red^$temp"
+  printf "^c$d_cyan^ $cond ^c$d_white^$temp^c$d_black^"
   # printf "^c$red^ $temp"
 }
 
 clock() {
-  printf "^c$d_red^ $(date '+%a ' | sed 's/.*/\U&/')"
-  # printf "^c$mo_Lavender^$(date '+%b.%d ')"
-  # printf "^c$mo_Red^ $(date '+%a ')"
-  printf "^c$d_white^$(date '+%I:%M%p')"
+  printf "^c$d_red^ $(date '+%^a')"
+  # printf "^c$d_red^ $(date '+%a ' | sed 's/.*/\U&/')"
+  printf "^c$d_white^ $(date '+%I:%M%p')^c$d_black^"
 }
 
-# date() {
-#   printf "^c$d_magenta^ $(date '+%b ' | sed 's/.*/\U&/')"
-#   # printf "^c$mo_Lavender^$(date '+%b.%d ')"
-#   # printf "^c$mo_Red^ $(date '+%a ')"
-#   printf "^c$d_white^$(date '+%d')"
-# }
-#
+day() {
+  printf "^c$d_blue^ $(date '+%^b')"
+  printf "^c$d_white^ $(date '+%d')^c$d_black^"
+}
+
 while true; do
 
-	[ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
+	[ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates && weather)
 	interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(spotify)$(pkg_updates) $(get_volume) $(clock)"
+    sleep 1 && xsetroot -name "$(weather) $(pkg_updates) $(get_volume) $(day) $(clock)"
 done
 
